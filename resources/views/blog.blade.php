@@ -1,7 +1,6 @@
 @extends('frontlayout.mainlayout')
 @section('section')
 <section id="hero-banner" class="blogs">
-  <div class="badge-cs">Blogs</div>   
   <h1>Our latest articles <br> and insights</h1>
 </section>
 <section id="blog-area" class="ptb">

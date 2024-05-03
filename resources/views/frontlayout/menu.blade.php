@@ -10,31 +10,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown has-megamenu">
-                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-                 <div class="dropdown-menu megamenu" role="menu">
+                 <a class="nav-link dropdown-toggle"  data-bs-auto-close="false" href="#" data-bs-toggle="dropdown">Services</a>
+                 <div id="drop-show-menu" class="dropdown-menu megamenu" role="menu">
                     <div class="container-fluid">
-                       <div class="row row-cols-2 row-cols-md-6 row-cols-lg-6 g-2 g-lg-3">
+                       <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-2 g-lg-3">
                           <div class="col col-12">
-                             <a href="{{route('front.webdevelopment')}}"><h6 class="title"> <i class="bi bi-code-slash"></i> Web Development</h6></a>
+                             <a href="{{route('front.webdevelopment')}}"><h6 class="title bg-pink"> <i class="bi bi-code-slash"></i> Web Development</h6></a>
                           </div>
                           <div class="col col-12">
-                             <a href=""><h6 class="title"> <i class="bi bi-volume-up"></i> Digital marketing</h6></a>
+                             <a href=""><h6 class="title bg-purple"> <i class="bi bi-volume-up"></i> Digital marketing</h6></a>
                           </div>
                           <div class="col col-12">
-                             <a href=""><h6 class="title"> <i class="bi bi-tv"></i> Social Media Marketing</h6></a>
+                             <a href=""><h6 class="title bg-green"> <i class="bi bi-tv"></i> Social Media Marketing</h6></a>
                           </div>
                           <div class="col col-12">
-                             <a href=""><h6 class="title"> <i class="bi bi-phone"></i> App Development</h6></a>
+                             <a href=""><h6 class="title bg-yellow"> <i class="bi bi-phone"></i> App Development</h6></a>
                           </div>
                           <div class="col col-12">
-                             <a href=""><h6 class="title"><i class="bi bi-easel2"></i> UI/UX Design</h6></a>
+                             <a href=""><h6 class="title bg-lightgreen"><i class="bi bi-easel2"></i> UI/UX Design</h6></a>
                           </div>
                           <div class="col col-12">
-                           <a href=""><h6 class="title"><i class="bi bi-easel2"></i> Graphic Design</h6></a>
-                        </div>
+                           <a href=""><h6 class="title bg-skyblue"><i class="bi bi-easel2"></i> Graphic Design</h6></a>
+                          </div>
+                          <div class="col col-12">
+                           <a href=""><h6 class="title bg-orange"><i class="bi bi-easel2"></i> search engine optimization</h6></a>
+                          </div>
+                          <div class="col col-12">
+                           <a href=""><h6 class="title bg-lightblack"><i class="bi bi-easel2"></i> branding & advertising</h6></a>
+                          </div>
                        </div>
-                    </div>
-                    <div class="overlay"></div>
+                    </div>                   
                  </div>
               </li>
               <li class="nav-item">
@@ -52,5 +57,6 @@
            </ul>
         </div>
      </div>
+     <div class="overlay mobile"></div>    
   </nav>
 </section>

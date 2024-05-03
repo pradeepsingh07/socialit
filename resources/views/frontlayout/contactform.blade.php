@@ -23,7 +23,7 @@
                           <div class="col-md-6">
                               <div class="mb-3">                        
                                   <select class="form-control">
-                                      <option>Select Desgination</option>
+                                      <option>Select Country</option>
                                      
                                   </select>
                               </div>                    

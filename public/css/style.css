@@ -11,11 +11,50 @@
    --footerColor:#1a1a1a;
    --footertextColor:#808080;
    --mainfontweight:500;
+   --lightBorder:rgba(25, 32, 32, 0.1);
+}
+.bg-pink{
+    background:#FFC0D9;
+    color:#000;
+}
+ 
+.bg-purple{
+    background:#D0BFFF;
+    color:#000;
+}
+
+.bg-green{
+    background:#A3FFD6;
+    color:#000;
+}
+
+.bg-yellow{
+    background:#FFFAB7;
+    color:#000;
+}
+
+.bg-lightgreen{
+    background:#D9EDBF;
+    color:#000;
+}
+
+.bg-skyblue{
+    background:#67C6E3;
+    color:#000;
+}
+
+.bg-orange{
+    background:#F6995C;
+    color:#000;
+}
+
+.bg-lightblack{
+    background:#BFCFE7;
+    color:#000;
 }
  .ptb{
     padding:90px 0px;
  }
-
  .font-size-heading{
     font-size:40px;
     font-weight:var(--mainfontweight);
@@ -23,6 +62,7 @@
     color:#000;
     text-align: center;
     line-height:50px !important;
+    text-transform: capitalize;
  }
 
 h1,h2,h3,h4,h5,h6{
@@ -60,7 +100,6 @@ body{
 
 #navbar .navbar-brand{
     color:var(--textColor);
-    opacity:var(--textColorlight); 
 }
 #navbar .navbar-brand img{    
     width:160px !important;  
@@ -80,19 +119,20 @@ body{
 .navbar .megamenu{ 
     padding: 1rem;
     background:var(--bgColor);
-    margin-top:6px !important;
     padding:20px 0px ;
     position: relative;
-    border-bottom:1px solid var(--borderColor);
     border-radius:0px 0px 30px 30px;
 }
 
+
 .dropdown-menu .title{
-    height:55px;
-    background:#89CFF3 !important;
-    text-align: center;
+    height:55px;    
     border-radius: 10px;
-    line-height:55px !important;    
+    padding-left:10px;
+    line-height:55px !important; 
+    font-size:16px;
+    font-weight:500;   
+    color:#1e1e1e !important;
 }
 
 .overlay{
@@ -102,8 +142,11 @@ body{
     height:100vh;
     background: rgba(11, 14, 14, 0.5);
     backdrop-filter:blur(20px);
-    top: 96px;   
+    top:60px;    
+    display:none;   
 }
+
+
 
 .navbar .megamenu a{   
     color:var(--borderColor);
@@ -359,7 +402,7 @@ body{
 
 #blog-area{
     background:var(--bgColor);
-    border-top:2px solid var(--borderColor);
+    border-top: 2px solid rgba(25, 32, 32, 0.1);
 }
 
 .blog-home a{
@@ -445,33 +488,39 @@ body{
     height:50px !important;
 }
 #openingsjob{
-    padding:90px 0px;
     background:var(--bgColor);
-    border-top:2px solid var(--borderColor);
+    border-top:2px solid rgba(25, 32, 32, 0.1);
 }
 #openingsjob .card{
     border:2px solid var(--footertextColor);
-    background:#0C0C0C;
+    background:var(--primary2Color);
     border-radius:20px;
     background-image:url('../images/texture.png');
-    margin-top:25px;
+    margin-bottom:25px;
 }
 #openingsjob .card-header{
    border-bottom:none;
+   background:transparent;
 }
+#openingsjob .card-footer{
+    border-top:none;
+    background:transparent;
+ }
 #openingsjob .jobtype{
     color:var(--footertextColor);
     font-weight:600;
 }
 
 #openingsjob .desgination{
-    color:#fff;
+    color:var(--bcolor);
     font-size:27px;
+    font-weight:500;
 }
 #openingsjob .jobform ,#openingsjob .jobtime{
-    color:#fff;
+    color:var(--footertextColor);
     font-size:13px !important;
     margin-right:15px;
+    font-weight:500;
 }
 #openingsjob .btngrp{
      text-align: center;
@@ -480,7 +529,7 @@ body{
     background:transparent;
     border:2px solid var(--primaryColor);
     padding:15px 30px;
-    color:#fff;
+    color:#000;
     text-decoration:none;
     border-radius:50px;
 }
@@ -495,8 +544,7 @@ body{
 }
 #joinform{
     background:#191919; 
-    text-transform: capitalize;
-    padding:90px 0px;
+    text-transform: capitalize;   
 }
 #joinform h2{
     color:#fff;
@@ -504,8 +552,8 @@ body{
     margin-bottom:30px !important;
 }
 #joinform form{
-   background:var(--bgColor);
-   border:2px solid var(--footertextColor);
+   background: #191919;
+   border: 1px solid var(--footertextColor);
    padding-top:20px;
    padding-bottom:20px;
    padding-left:20px;
@@ -584,12 +632,6 @@ body{
 #allwork{
     background:var(--bgColor);
     border-top:2px solid var(--borderColor);
-    padding:90px 0px;
- }
-
- #allwork h2{
-    color:#fff;
-    font-size:28px;
  }
 
  #allwork .form-control{
@@ -610,11 +652,11 @@ body{
     border:2px solid var(--footertextColor);
     position: relative;  
     background:transparent;
-    margin-top:22px;  
+    margin-bottom:20px;  
+    overflow:hidden;
  }
  #allwork .card img{
     border:none;
-    border-radius:20px;
  }
  #allwork .card .readmore{
     content:"";
@@ -643,7 +685,21 @@ body{
 
  #singlework{
     background:var(--bgColor);
- }
+    border-top:1px solid var(--lightBorder);
+    border-bottom:1px solid var(--lightBorder);
+ } 
+
+ #singlework h2{
+    text-transform: capitalize;
+    font-size:30px;    
+ } 
+
+ #singlework p{
+    text-transform: capitalize;
+    line-height:31px;
+    font-size: 15px; 
+ } 
+
 
 /*======================Model Css=========================*/
 
@@ -924,8 +980,7 @@ body{
   #faq .accordion-button{
     background: var(--primary2Color);
     border:2px solid var(--footertextColor);
-    color:#fff;   
-    border-radius:10px !important;
+    color:var(--bcolor);   
   }
 
   #faq .accordion-button:focus{
@@ -954,10 +1009,16 @@ body{
  #faq .accordion-button:not(.collapsed)::after {
     background-image: url('../images/plus.svg') !important;
     transform: rotate(45deg) !important;
+    
  }
 
  #faq .accordion-button::after {
     background-image: url('../images/plus.svg') !important;
+    background-color:var(--primaryColor);
+    border-radius:50px;
+    width:27px;
+    height:27px;
+    background-position:center center;
  }
  #faq .accordion-header{
     background: var(--bgColor) !important;
@@ -1167,6 +1228,31 @@ footer ul li a{
     border-right:0px solid var(--borderColor);   
 }
 
+
+/*======================Service Inner Pages Css=========================*/
+
+#service-inner-page{
+    background:var(--primary2Color);
+}
+#service-inner-page .card{
+    margin-bottom:20px;
+    border-radius:20px;
+}
+#service-inner-page .card-title{
+    font-size:27px;
+    text-transform:capitalize;
+    font-weight:500;
+}
+#service-inner-page .card p{
+    color:#000;
+    opacity:0.8;
+    font-size:16px;
+    font-weight:300;
+}
+
+
+
+
 /*======================Media Query=========================*/
 
 @media(max-width:575px){ 
@@ -1180,13 +1266,13 @@ footer ul li a{
     #copyright .container{text-align: center;}
     #copyright .container .copy{margin-top:10px;}
     #copyright .container .ordercus-1{order:-1 !important;}
-    #openingsjob .applybtn , #openingsjob .viewbtn { padding:5px 15px; font-size:13px;}
+    #openingsjob .applybtn , #openingsjob .viewbtn { padding:8px 15px; font-size:13px;}
     #openingsjob .btngrp{ text-align: start; margin-top:20px;}  
     #contactform .col-md-6:last-child{margin-top:25px;}
     .work .imgwork img{width:100px;height:100px;}
     #hero-banner button{ width:150px; font-size:12px; height:40px;}
     #joinform form {padding-left:10px;padding-right: 10px;}
-    .overlay{display:none;}
+    .mobile{display:none !important;}
     .navbar .megamenu{border-bottom:0px solid #000;}
     #whatwedo .card .card-body h5{font-size:20px; font-weight:600;}
     .marquee .left,.marquee .right{width:20%;}
@@ -1197,6 +1283,9 @@ footer ul li a{
     #reacord p{ font-size:14px !important; margin-bottom:20px !important;}
     #cta p{ margin-bottom:40px !important;}
     #platform .inline-icon{margin-bottom:10px;}
+    #openingsjob .desgination { font-size: 22px ;}
+    .navbar .megamenu{border:none;}
+    .nav-item{ border-bottom: 1px solid #c9c9c9; margin-bottom:10px;}
 }
 
 @media screen and (min-width:576px) and (max-width:767px){
@@ -1228,8 +1317,6 @@ footer ul li a{
 	.navbar .has-megamenu{position:static!important;}
 	.navbar .megamenu{left:0; right:0; width:100%; margin-top:0;}	
 }	
-
-
 
 @media only screen and (min-width: 1500px) {
     .res-container {

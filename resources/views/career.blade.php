@@ -4,10 +4,11 @@
   <h1>Join our team and shape <br> the future with us</h1>
   <button>View Current Openings</button>
 </section>
-<section id="openingsjob">
-    <div class="container-fluid">
+<section id="openingsjob" class="ptb">
+    <div class="container-fluid res-container">
         <div class="row mx-md-3 mx-lg-3">
-             <div class="card">
+             <div class="col-12">
+              <div class="card">
                 <div class="card-header">
                    <div class="row">
                       <div class="col-6 col-md-6 text-capitalize jobtype">INTERNSHIP</div>
@@ -15,7 +16,7 @@
                    </div>
                 </div>
                 <div class="card-body">
-                   <div class="row">
+                   <div class="row align-items-center">
                       <div class="col-12 col-md-6">
                          <div class="desgination">Graphic Designer</div>
                       </div>
@@ -30,6 +31,8 @@
                    <span class="jobtime"><i class="bi bi-clock"></i> Full Time</span>                   
                 </div>
             </div>
+          </div>
+          <div class="col-12">
             <div class="card">
                 <div class="card-header">
                    <div class="row">
@@ -38,7 +41,7 @@
                    </div>
                 </div>
                 <div class="card-body">
-                   <div class="row">
+                   <div class="row align-items-center">
                       <div class="col-12 col-md-6">
                          <div class="desgination">Graphic Designer</div>
                       </div>
@@ -54,10 +57,11 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>    
 </section>
-<section id="joinform">
- <div class="container-fluid">    
+<section id="joinform" class="ptb">
+ <div class="container-fluid res-container">    
      <div class="row mx-md-3 mx-lg-3">
         <div class="col-md-6 order-1 order-md-1 order-lg-1">          
          <form>    

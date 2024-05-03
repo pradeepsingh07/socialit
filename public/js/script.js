@@ -130,10 +130,6 @@ $('.platform-icons').slick({
     ]
 });
 
-
-
-
-
 $('.work-slide').slick({
     infinite: true,
     slidesToShow: 3,
@@ -156,11 +152,19 @@ $('.work-slide').slick({
       ]
 });
 
-
-
-
 $('.choosen').change( function(e){   
     const fileName = e.target.files[0].name;
     $('.filename').html(fileName);
 
-})      
+}) 
+
+$('.dropdown-toggle').on('click',function(){
+  if($('#drop-show-menu').hasClass('show')){
+       $('.overlay').show();  
+   }else{
+      $('.overlay').hide();
+   }
+})   
+
+
+
