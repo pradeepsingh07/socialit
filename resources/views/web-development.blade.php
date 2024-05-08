@@ -2,14 +2,16 @@
 @section('section')
 <section id="hero-banner">
 <h1>Web Development</h1>
+<p class="para-font-hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
 <div class="gap-md-3 gap-3 d-flex">
      <button data-bs-toggle="modal" data-bs-target="#watchdemo" >Schedule a meeting</button>
      <button><a href="#">Case Study</a></button>
 </div>
 </section>
 <section id="service-inner-page" class="ptb">
-     <div class="container-fluid res-container">
-        <h2 class="font-size-heading">Our Expertise in Web Development</h2>
+    <h2 class="font-size-heading">Our Expertise in Web Development</h2>
+    <p class="para-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
+     <div class="container-fluid res-container">        
         <div class="row mx-md-3 mx-lg-3">
             <div class="col-12 col-md-6">
                 <div class="card">
@@ -112,7 +114,8 @@
 </section>
 <section id="faq" class="ptb">
     <div class="container-fluid res-container">
-        <h6 class="font-size-heading">Frequently Asked Questions for web development</h6>
+        <h6 class="font-size-heading">Frequently Asked Questions for web development</h6>        
+        <p class="para-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
         <div class="row mx-md-3 mx-lg-3">
             <x-accodian/>
          </div> 

@@ -2,7 +2,7 @@
 @section('section')
 <section id="hero-banner" class="career">    
   <h1>Join our team and shape <br> the future with us</h1>
-  <button>View Current Openings</button>
+  <p class="para-font-hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
 </section>
 <section id="openingsjob" class="ptb">
     <div class="container-fluid res-container">

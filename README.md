@@ -64,3 +64,28 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+<!-- <section id="platform" class="ptb">
+     <div class="container-fluid res-container">
+          <h3 class="font-size-heading">Achieve Peak Performance on Vital Platforms!</h3>
+          <div class="text-center">
+               <a href="{{route('front.contact')}}" class="">get started</a>
+          </div>
+         <div class="row mx-md-3 mx-lg-3">
+               <div class="platform-icons">       
+               <div class="inline-icon"><img src="{{asset('images/platform/fb.webp')}}" class="img-fluid" alt=""/></div>   
+               <div class="inline-icon"><img src="{{asset('images/platform/behn.webp')}}" class="img-fluid" alt=""/></div> 
+               <div class="inline-icon"><img src="{{asset('images/platform/insta.webp')}}" class="img-fluid" alt=""/></div> 
+               <div class="inline-icon"><img src="{{asset('images/platform/link.webp')}}" class="img-fluid" alt=""/></div> 
+               <div class="inline-icon"><img src="{{asset('images/platform/bing.webp')}}" class="img-fluid" alt=""/></div> 
+               <div class="inline-icon"><img src="{{asset('images/platform/google.webp')}}" class="img-fluid" alt=""/></div> 
+               <div class="inline-icon"><img src="{{asset('images/platform/meta.webp')}}" class="img-fluid" alt=""/></div> 
+               <div class="inline-icon"><img src="{{asset('images/platform/wp.webp')}}" class="img-fluid" alt=""/></div> 
+               <div class="inline-icon"><img src="{{asset('images/platform/github.webp')}}" class="img-fluid" alt=""/></div>
+               <div class="inline-icon"><img src="{{asset('images/platform/yt.webp')}}" class="img-fluid" alt=""/></div>
+               <div class="inline-icon"><img src="{{asset('images/platform/pin.webp')}}" class="img-fluid" alt=""/></div> 
+              </div>
+         </div>
+     </div>
+</section> -->

@@ -58,11 +58,27 @@
  .font-size-heading{
     font-size:40px;
     font-weight:var(--mainfontweight);
-    margin-bottom:45px !important;
+    margin-bottom:10px !important;
     color:#000;
     text-align: center;
     line-height:50px !important;
     text-transform: capitalize;
+    max-width:850px;
+    margin:auto;
+ }
+
+ .para-font{
+    max-width:850px !important;
+    margin: auto;
+    text-align: center;
+    margin-bottom:40px !important;
+    font-size:16px;   
+ }
+ .para-font-hero{
+    max-width:850px !important;   
+    text-align: center;
+    font-size:16px;
+    margin-top:10px;
  }
 
 h1,h2,h3,h4,h5,h6{
@@ -132,7 +148,12 @@ body{
     line-height:55px !important; 
     font-size:16px;
     font-weight:500;   
-    color:#1e1e1e !important;
+    color:#fff !important;
+    background: var(--primaryColor) !important;
+}
+
+.dropdown-menu .title .bi{
+    color:#000;
 }
 
 .overlay{
@@ -328,47 +349,32 @@ body{
 }
 
 #whatwedo .card{
-    border: 2px solid var(--footertextColor);
-    background: linear-gradient(280.53deg, #282828 -13.85%, #17171a 80.5%);
+    background:var(--bgColor);
     color:#fff;
     position: relative;
-    overflow:hidden;
-    height:auto;
-    transition: all 0.4s ease-in-out;
+    height:auto; 
+    transition: all 1s ease-in-out;
 }
 
-#whatwedo .card:hover{
-   box-shadow:10px 10px 1px var(--primaryColor);
-   transform: translate(-10px, -20px) skewX(-20px);
-}
-
-#whatwedo .card .card-body{
-   position: absolute;
-   bottom:0px;
-   height:100%;
-   width:100%;
-   background:rgba(0, 0, 0, 0.7);
-   backdrop-filter:blur(10px);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   text-align: center;
-   
-}
-
-#whatwedo .card .card-body .bi{
-   background:#fff;
-   color:#000 !important;
+#whatwedo .card .img .icon{
+   background:var(--primaryColor) !important;
+   color:#fff !important;
    padding: 4px 9px;
    border-radius:50px;
    font-weight:bold;
+   position: absolute;
+   bottom:15px;
+   left:18px;
+   
  }
-
+ #whatwedo .card .img .icon .bi{
+    font-size:20px;
+ }
 #whatwedo .card .card-body h5{
     font-size:19px ;
     text-transform: capitalize;    
-    font-weight:400;
+    font-weight:500;
+    color:#000;
 }
 
 #whatwedo .card .card-body p{
@@ -376,6 +382,7 @@ body{
     text-transform: capitalize;    
     font-weight:400;
     margin:14px 0px;
+    color:#000;
 }
 #whatwedo .card .card-body button{
     background: var(--primaryColor);
@@ -387,6 +394,27 @@ body{
     border-radius:50px;
 }
 
+#whatwedo .card img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+    border-radius:20px; 
+}
+#whatwedo .card .img{
+   position: relative;  
+   padding:7px; 
+}
+
+#whatwedo .card .img::before{    
+    content:"";
+    position:absolute;
+    background-image:url('https://cdn2.birdeye.com/version2/v3/pages/2024/enterprise/edgedrop.svg');
+    bottom:0;
+    left:0;
+    width:100px;
+    height:100px;
+    border-radius:0px 50px 0px 0px;
+}
 
 /* <div class="infomail">
 <a href="mailto:info@socialit.in">info@socialit.in</a>
@@ -396,8 +424,9 @@ body{
 /*======================Blog Css=========================*/
 
 .blogs{
-    height:250px !important;
+    max-height:300px !important;
     margin-top:calc(100px - 34px);
+    padding:20px 0px;
 }
 
 #blog-area{
@@ -420,6 +449,8 @@ body{
 #blog-area .card{
     border:none;    
     margin-bottom:20px;
+    border-radius:20px;
+    overflow: hidden;
 }
 #blog-area .card .card-body{
    background:#fff;
@@ -432,30 +463,34 @@ body{
 }
 #blog-area .card-footer{
     justify-content:space-between;
+    align-items: center;
     padding:14px 7px;
+    background:none;
 }
 
 #blog-area .card-footer .authorname{
     color:#000;
     font-weight:500;
-    font-size:14px;
+    font-size:15px;
 }
 
 #blog-area .card-footer .category{
-    color:rgba(0, 0, 0, 0.6);
-    font-weight:500;
-    font-size:14px;
+    color:var(--bgColor);
+    font-weight:400;
+    font-size:13px;
+    background: var(--bcolor);
+    padding:5px 10px;
+    border-radius:50px;
 }
-#blog-area .loadmore{
-    width:200px;
-    height:40px;
+#blog-area .loadmore{       
     border:none;
     background: var(--primaryColor);
     color:#fff;
-    border-radius:10px;
+    border-radius:50px;
+    padding:10px 25px;
     margin-top:20px;
+    font-size: 16px;
 }
-
 
  .blog-home .blogs-prev ,.blog-home .blogs-next{
     background:var(--primaryColor);  
@@ -469,17 +504,19 @@ body{
  .blog-home .blogs-prev:hover ,.blog-home .blogs-next:hover{
      background:none;
      border:2px solid var(--primaryColor);
+     color:#000;
  }
 
  .blog-home{
     border-top:0px !important;
+    background:var(--primary2Color) !important;
  }
-
+  
 
 /*======================Career Css=========================*/
 
 .career{
-    height:250px !important;
+    max-height:300px !important;
     margin-top:calc(100px - 34px);
     padding:20px 0px !important; 
 }
@@ -623,7 +660,7 @@ body{
 
 /*======================Work Css=========================*/
 .work{
-    height:250px !important;
+    max-height:300px !important;
     margin-top:calc(100px - 34px);
     padding:20px 0px !important; 
     position: relative;
@@ -631,7 +668,7 @@ body{
 
 #allwork{
     background:var(--bgColor);
-    border-top:2px solid var(--borderColor);
+    border-top:2px solid rgba(25, 32, 32, 0.1);
  }
 
  #allwork .form-control{
@@ -648,12 +685,12 @@ body{
     margin-top:10px;
  }
  #allwork .card{    
-    border-radius:20px;
-    border:2px solid var(--footertextColor);
+    border-radius:0px;
     position: relative;  
     background:transparent;
     margin-bottom:20px;  
     overflow:hidden;
+    border:none;
  }
  #allwork .card img{
     border:none;
@@ -680,7 +717,7 @@ body{
  
  .work .imgwork img{
     width:150px;
-    height:150px;
+    object-fit: contain;  
  }
 
  #singlework{
@@ -699,6 +736,8 @@ body{
     line-height:31px;
     font-size: 15px; 
  } 
+
+ 
 
 
 /*======================Model Css=========================*/
@@ -815,6 +854,8 @@ body{
     margin-left:5px;
     border:none;
     margin-bottom: 20px;
+    background:var(--primary2Color);
+    border-radius:20px;
   }
 
  #customer-review .card-title{
@@ -831,9 +872,9 @@ body{
     display: inline-block;
  }
 
- #customer-review .card-header{
-    background:#fff;
+ #customer-review .card-header{    
     border-bottom:0px;
+    background:transparent;
  }
  #customer-review .card-header .bi-star-fill{
     color:#FBC634;
@@ -844,6 +885,9 @@ body{
    padding: 8px 0px;
  }
 
+ #customer-review .card-footer{
+    border-top:0px;
+  }
 
  #customer-review .reviews-prev , #customer-review .reviews-next{
     background:var(--primaryColor);  
@@ -857,6 +901,7 @@ body{
  #customer-review .reviews-prev:hover , #customer-review .reviews-next:hover{
      background:none;
      border:2px solid var(--primaryColor);
+     color:#000;
  }
 
 
@@ -866,18 +911,24 @@ body{
     background:var(--primary2Color);    
  }
 
+ #record .card{
+    padding:25px 0px;
+ }  
+
  #record h5{
     color:#000;
-    font-size:40px !important;
+    font-size:40px;
     font-weight:500;
  }
  #record p{
-    color:var(--footertextColor); 
-    font-size:20px !important;
+    color:#000; 
+    font-size:20px;
     text-transform: capitalize;
     margin-bottom:0px !important;
     font-weight:500;
  }  
+
+
 
  /*======================reacord css=========================*/
  #platform{
@@ -931,8 +982,8 @@ body{
  }
 
  #recentworks .card{
-    border:2px solid var(--borderColor);
     overflow: hidden;
+    border-radius:20px;
  }
 
 
@@ -948,10 +999,11 @@ body{
  }
 
  #recentworks .viewbtn{
-    padding:15px 50px;
+    padding:10px 25px;
     border:2px solid var(--primaryColor);
     border-radius:50px !important;
     transition: all 0.3s ease-in-out;
+    background:var(--primaryColor);  
  }
 
  #recentworks .viewbtn:hover{
@@ -1025,7 +1077,6 @@ body{
  }
  
 
- 
 
 
 /*======================contact Css=========================*/
@@ -1076,13 +1127,15 @@ body{
 #contactform h6{
     margin-left:10px;
     color:#fff;
+    line-height: 33px;
+    margin-bottom:20px;
 }
 
-#contactform h6 a{
+#contactform a{
     color:#fff;
     margin-left:10px;
     line-height:30px;
-    text-decoration:none;
+    text-decoration:none;    
 }
 
 .infomail{
@@ -1251,13 +1304,11 @@ footer ul li a{
 }
 
 
-
-
 /*======================Media Query=========================*/
 
 @media(max-width:575px){ 
     .ptb{padding:35px 0px !important;}
-    .font-size-heading{ font-size:26px !important; margin-bottom:18px !important; line-height:35px !important;} 
+    .font-size-heading{ font-size:26px !important; line-height:35px !important;} 
     #hero-banner h1{line-height:50px;}
     #logos::after{ width:100px;}
     #logos::before{ width:100px;}
@@ -1269,7 +1320,7 @@ footer ul li a{
     #openingsjob .applybtn , #openingsjob .viewbtn { padding:8px 15px; font-size:13px;}
     #openingsjob .btngrp{ text-align: start; margin-top:20px;}  
     #contactform .col-md-6:last-child{margin-top:25px;}
-    .work .imgwork img{width:100px;height:100px;}
+    .work .imgwork img{width:100px;}
     #hero-banner button{ width:150px; font-size:12px; height:40px;}
     #joinform form {padding-left:10px;padding-right: 10px;}
     .mobile{display:none !important;}
@@ -1286,17 +1337,22 @@ footer ul li a{
     #openingsjob .desgination { font-size: 22px ;}
     .navbar .megamenu{border:none;}
     .nav-item{ border-bottom: 1px solid #c9c9c9; margin-bottom:10px;}
+    #record .card{margin-bottom:10px;}
+    #record h5{ font-size:20px;} 
+    #record p { font-size:17px;}
+    .para-font{font-size:13px;}
+    #singlework h2 { font-size:25px;}
+    .para-font-hero{ font-size:13px; max-width:500px !important;} 
 }
 
 @media screen and (min-width:576px) and (max-width:767px){
     .ptb{padding:45px 0px;}
-    .font-size-heading{line-height:35px !important; line-height:35px !important;}
-
-    
+    .font-size-heading{line-height:35px !important; line-height:35px !important;}   
+    .para-font-hero{ font-size:13px; max-width:500px;} 
 }
 @media screen and (min-width:768px) and (max-width:991px){
     .ptb{padding:55px 0px;}
-    .font-size-heading{ font-size:28px !important; margin-bottom:28px !important; line-height:40px !important;}
+    .font-size-heading{ font-size:28px !important; line-height:40px !important;}
     .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
 		overflow-y: auto;
 	    max-height: 90vh;
@@ -1305,12 +1361,12 @@ footer ul li a{
 }
 @media screen and (min-width:992px) and (max-width:1199px){
     .ptb{padding:55px 0px;}
-    .font-size-heading{ font-size:30px !important; margin-bottom:28px !important; line-height:40px !important;}
+    .font-size-heading{ font-size:30px !important; line-height:40px !important;}
 }
 
 @media screen and (min-width:1200px) and (max-width:1599px){
     .ptb{padding:70px 0px;}
-    .font-size-heading{ font-size:36px; margin-bottom:35px !important; line-height:45px !important;}
+    .font-size-heading{ font-size:36px; line-height:45px !important;}
 }
 
 @media all and (min-width: 992px) {	
