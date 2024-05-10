@@ -4,8 +4,10 @@
 <h1>Empowering Businesses <br> in the Digital Realm</h1>
 <p class="para-font-hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
 <div class="gap-md-3 gap-3 d-flex">
-     <button data-bs-toggle="modal" data-bs-target="#watchdemo" >Schedule a Meeting</button>
-     <button><a href="#">Case Study</a></button>
+     {{-- <button data-bs-toggle="modal" data-bs-target="#watchdemo" >Schedule a Meeting</button>
+     <button><a href="#">Case Study</a></button> --}}
+     <a class="btn btn-primary">Schedule a Meeting</a>
+     <a class="btn btn-outline-primary">Case Study</a>
 </div>
 </section>
 <section id="logos">  
@@ -17,7 +19,7 @@
      <h2 class="font-size-heading">Transform Your Business with Our Expert Services</h2>   
      <p class="para-font">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus nobis quasi exercitationem quibusdam ipsum quos autem repudiandae temporibus aspernatur ea?</p> 
      <div class="container-fluid res-container">
-           <div class="row mx-md-3 mx-lg-3"> 
+           <div class="row service-card-group"> 
                <x-servicecard href="#" title='web development' image="images/service/web.webp"/>
                <x-servicecard href="#" title="digital marketing" image="images/service/dm.webp"/> 
                <x-servicecard href="#" title="social media marketing" image="images/service/smm.webp"/>  
@@ -103,6 +105,9 @@
                <div class="card">
                     <img src="{{asset('images/1.jpg')}}" class="img-fluid" alt=""/>
                </div>
+               <div class="card">
+                    <img src="{{asset('images/1.jpg')}}" class="img-fluid" alt=""/>
+               </div>
            </div>
            <div class="text-center viewbtn-top">
                <a href="{{route('front.work')}}" class="viewbtn">View Portfolio <i class="bi bi-arrow-right"></i></a>
@@ -123,11 +128,57 @@
                             <div class="card-title date">15 Feb 2024</div>
                             <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
                             <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                            </div>
-                            <div class="card-footer d-flex">
-                                 <div class="authorname">Pradeep Singh</div>
-                                 <div class="category">Web Development</div> 
-                            </div>
+                            </div>                           
+                      </div>
+                    </a>
+                    <a href="">
+                         <div class="card">
+                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
+                            <div class="card-body">
+                            <div class="card-title date">15 Feb 2024</div>
+                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
+                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
+                            </div>                       
+                      </div>
+                    </a>
+                    <a href="">
+                         <div class="card">
+                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
+                            <div class="card-body">
+                            <div class="card-title date">15 Feb 2024</div>
+                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
+                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
+                            </div>                      
+                      </div>
+                    </a>
+                    <a href="">
+                         <div class="card">
+                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
+                            <div class="card-body">
+                            <div class="card-title date">15 Feb 2024</div>
+                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
+                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
+                            </div>                       
+                      </div>
+                    </a>
+                    <a href="">
+                         <div class="card">
+                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
+                            <div class="card-body">
+                            <div class="card-title date">15 Feb 2024</div>
+                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
+                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
+                            </div>                         
+                      </div>
+                    </a>
+                    <a href="">
+                         <div class="card">
+                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
+                            <div class="card-body">
+                            <div class="card-title date">15 Feb 2024</div>
+                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
+                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
+                            </div>                       
                       </div>
                     </a>
                     <a href="">
@@ -138,84 +189,14 @@
                             <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
                             <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
                             </div>
-                            <div class="card-footer d-flex">
+                            {{-- <div class="card-footer d-flex">
                                  <div class="authorname">Pradeep Singh</div>
                                  <div class="category">Web Development</div> 
-                            </div>
-                      </div>
-                    </a>
-                    <a href="">
-                         <div class="card">
-                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
-                            <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                            </div>
-                            <div class="card-footer d-flex">
-                                 <div class="authorname">Pradeep Singh</div>
-                                 <div class="category">Web Development</div> 
-                            </div>
-                      </div>
-                    </a>
-                    <a href="">
-                         <div class="card">
-                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
-                            <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                            </div>
-                            <div class="card-footer d-flex">
-                                 <div class="authorname">Pradeep Singh</div>
-                                 <div class="category">Web Development</div> 
-                            </div>
-                      </div>
-                    </a>
-                    <a href="">
-                         <div class="card">
-                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
-                            <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                            </div>
-                            <div class="card-footer d-flex">
-                                 <div class="authorname">Pradeep Singh</div>
-                                 <div class="category">Web Development</div> 
-                            </div>
-                      </div>
-                    </a>
-                    <a href="">
-                         <div class="card">
-                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
-                            <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                            </div>
-                            <div class="card-footer d-flex">
-                                 <div class="authorname">Pradeep Singh</div>
-                                 <div class="category">Web Development</div> 
-                            </div>
-                      </div>
-                    </a>
-                    <a href="">
-                         <div class="card">
-                            <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
-                            <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                            </div>
-                            <div class="card-footer d-flex">
-                                 <div class="authorname">Pradeep Singh</div>
-                                 <div class="category">Web Development</div> 
-                            </div>
+                            </div> --}}
                       </div>
                     </a>
                </div> 
-               <div class="mt-md-4 mt-lg-4 mt-2 text-center d-flex gap-2 justify-content-center">
+               <div class="mt-md-1 mt-lg-1 mt-2 text-center d-flex gap-2 justify-content-center">
                     <button class="blogs-prev"><i class="bi bi-arrow-left"></i></button>
                     <button class="blogs-next"><i class="bi bi-arrow-right"></i></button>
                </div>

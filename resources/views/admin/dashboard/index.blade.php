@@ -23,25 +23,12 @@
             </div>                
          </div>              
       </div>
-      <div class="col-xl-7 col-lg-12 col-md-12 e-d-tasks-projects-events">
-               <div class="row mb-3 mt-xl-0 mt-lg-4 mt-md-4 mt-4">                     
-                  <div class="col-md-6 mb-3">
-                     <div class="bg-white p-20 rounded b-shadow-4 d-flex justify-content-between align-items-center mt-3 mt-lg-0 mt-md-0">
-                        <div class="d-block text-capitalize">
-                           <h5 class="f-15 f-w-500 mb-20 text-darkest-grey"> Projects </h5>
-                           <div class="d-flex">
-                              <a href="#">
-                                 <p class="mb-0 f-21 font-weight-bold text-blue d-grid mr-5">
-                                    6
-                                 </p>
-                              </a>                                   
-                           </div>
-                        </div>                           
-                     </div>
-                  </div>                      
-               </div>                   
-            </div>
-         </div>
+      <div class="col-md-4">
+          <div class="card">
+             <div class="card-header">Total Clients</div>
+          </div>
+      </div>      
+      </div>
       </div>
    </section>
 </div> 
