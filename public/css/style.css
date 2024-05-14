@@ -7,44 +7,46 @@
    --textColorlight:0.5;
    --borderColor:#595959;
    --primaryColor:#FF204E;
+   /* --primaryColor:#5356ff; */
    --primary2Color:#F0F0F0;
    --footerColor:#1a1a1a;
    --footertextColor:#808080;
    --mainfontweight:500;
    --lightBorder:rgba(25, 32, 32, 0.1);
-}
-
-.container-fluid{
-    padding-left:90px; 
-    padding-right: 90px;
+   --slidebtn:38px;
+   --borderradius:20px;
 }
 
 .btn-primary{
     background:var(--primaryColor);
     border:none;
     border-radius: 50px;
-    padding-left:24px;
-    padding-right:24px;
-    padding: 6x 24px;
+    line-height: 30px;
+    min-width:200px;
 }
-
 .btn-primary:hover{
    background:#B61637;
 }
-
+.btn-primary:active{
+    background:#B61637 !important;
+ }
 .btn-outline-primary{
     border:2px solid var(--primaryColor);
     border-radius: 50px;
     padding-left:24px;
     padding-right:24px;
     color:#000;
-    padding: 8px 24px;    
+    padding: 8px 24px;
+    min-width:200px;    
 }
 .btn-outline-primary:hover{
     background:var(--primaryColor);
     border:2px solid var(--primaryColor);
 }
-
+.btn-outline-primary:active{
+    background:var(--primaryColor) !important;
+    border:2px solid var(--primaryColor) !important;
+}
 
 .bg-pink{
     background:#FFC0D9;
@@ -235,8 +237,8 @@ body{
 
 #hero-banner{ 
    width:100%;
-   height:400px;
-   background-image:url('../images/hero-banner.jpg');
+   height:80vh;
+   background-image:url('../images/koy7.jpg');
    background-repeat: repeat;
    display: flex;
    background-size:cover;
@@ -270,9 +272,7 @@ body{
 /*======================logo Css=========================*/
 
 #logos{
-    background:var(--bcolor);
-    border-top:1px solid var(--borderColor);
-    border-bottom:1px solid var(--borderColor);
+    background:#e5e1da; 
     position: relative;   
 }
 
@@ -299,10 +299,11 @@ body{
     animation-iteration-count: infinite;  
 }
 
-#logos .logo-inner .single-slide img{
+#logos img{
    width:100%;
-   height:100px;
-   cursor: pointer;  
+   height:auto;
+   cursor: pointer;
+   filter:invert(80%) !important;
 }
 
 #logos::before{
@@ -310,7 +311,7 @@ body{
     position: absolute;
     top:0;
     left:0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0),var(--bcolor));
+    background: linear-gradient(to left, rgba(255, 255, 255, 0),#e5e1da);
     height:100%;
     width:200px;  
     z-index: 1; 
@@ -320,7 +321,7 @@ body{
     position: absolute;
     top:0;
     right:0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0),var(--bcolor));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0),#e5e1da);
     height:100%;
     width:200px;
     z-index:1;
@@ -352,10 +353,10 @@ body{
     position: relative;
     height:auto; 
     transition: all 0.4s ease-in-out;
-    min-width: 220px;
     width: 100%;
     overflow: hidden;
     border-radius: 20px !important;
+    padding-top:10px;
 }
 
 #whatwedo .card .img .icon{
@@ -399,8 +400,10 @@ body{
 }
 #whatwedo .card .img{
     position: relative;  
-    padding:10px; 
     overflow: hidden;
+    width:90%;    
+    margin: auto;
+    border-radius:10px;
  }
  
  #whatwedo .card .img::before{    
@@ -416,27 +419,26 @@ body{
     width:100%;
     height:270px;
     object-fit:cover;
-    border-radius:10px; 
-    transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;   
 }
 #whatwedo .card:hover img{
-    transform: scale(1.2);
+    transform: scale(1.2);    
 }
 #whatwedo .card:hover h5{
     color:var(--primaryColor);
 }
 
-#whatwedo .card-service{
+/* #whatwedo .card-service{
    padding-left:0px !important;
    padding-right:0px !important;
    max-width: 280px;
-}
+} */
 
-#whatwedo .service-card-group{
+/* #whatwedo .service-card-group{
     display:flex;
     justify-content: center;    
     gap:1rem;
-}
+} */
 
 /*======================Blog Css=========================*/
 
@@ -452,8 +454,8 @@ body{
 }
 
 .blog-home a{
-   margin-left:5px !important;
-   margin-right:5px !important;
+   margin-left:11px !important;
+   margin-right:11px !important;
 }
 
 .blog-home h5{
@@ -465,7 +467,6 @@ body{
 }
 #blog-area .card{
     border:none;    
-    margin-bottom:20px;
     border-radius:20px;
     overflow: hidden;
 }
@@ -506,7 +507,7 @@ body{
     padding:5px 10px;
     border-radius:50px;
 }
-#blog-area .loadmore{       
+ #blog-area .loadmore{       
     border:none;
     background: var(--primaryColor);
     color:#fff;
@@ -514,28 +515,78 @@ body{
     padding:10px 25px;
     margin-top:20px;
     font-size: 16px;
-}
+ }
+ #blog-area .blog-card-group{
+    position: relative;
+ }
+ #blog-area .blog-btn-slide .blogs-prev{
+    content:"";
+    position:absolute;  
+    left:0;
+    top:50%;  
+ }
+ #blog-area .blog-btn-slide .blogs-next{
+    content:"";
+    position:absolute;  
+    right:0;
+    top:50%;  
+ } 
 
  .blog-home .blogs-prev ,.blog-home .blogs-next{
     background:var(--primaryColor);  
-    width:38px !important;
-    height:38px !important;
+    width:var(--slidebtn) !important;
+    height:var(--slidebtn) !important;
     border-radius:50px;
     border:none;
-    color:#fff;
+    color:#fff; 
+    display:none; 
+    opacity:0.7;   
+ }
+
+ .blog-card-group:hover .blogs-prev{
+    display:block;   
+    
+ }
+ .blog-card-group:hover .blogs-next{
+    display:block;    
  }
  
- .blog-home .blogs-prev:hover ,.blog-home .blogs-next:hover{
-     background:none;
+ .blog-home .blogs-prev:hover ,.blog-home .blogs-next:hover{   
      border:2px solid var(--primaryColor);
-     color:#000;
+     opacity:1;
  }
 
  .blog-home{
     border-top:0px !important;
     background:var(--primary2Color) !important;
+ }  
+ .blog-show{
+    height:100% !important;
+    width:100% !important;
+    background:none;
  }
-  
+ #blog-content .card{
+   background:#F0EFEF;
+   border:2px solid #DDDDDD;
+   padding:10px;
+ }
+ #blog-content .card a{
+    color:#000;
+    font-weight:500;
+    font-size:16px !important;
+    border-bottom:1px solid #000;
+    padding:10px;
+    text-decoration:none;
+    border-bottom:2px solid #DDDDDD;
+}
+#blog-content .card a:last-child{  
+   border-bottom:0px solid #000;  
+}
+
+/* #blog-content #fixed-top{
+    position: sticky;
+    top: 20px;
+} */
 
 /*======================Career Css=========================*/
 
@@ -555,9 +606,9 @@ body{
 #openingsjob .card{
     border:2px solid var(--footertextColor);
     background:var(--primary2Color);
-    border-radius:20px;
+    border-radius:var(--borderradius);
     background-image:url('../images/texture.png');
-    margin-bottom:25px;
+    overflow: hidden;
 }
 #openingsjob .card-header{
    border-bottom:none;
@@ -712,12 +763,12 @@ body{
     border-radius:0px;
     position: relative;  
     background:transparent;
-    margin-bottom:20px;  
     overflow:hidden;
     border:none;
  }
  #allwork .card img{
     border:none;
+    border-radius:var(--borderradius);
  }
  #allwork .card .readmore{
     content:"";
@@ -839,12 +890,6 @@ body{
 
  #cta a{
     text-transform: capitalize;
-    background: var(--primaryColor);
-    padding:15px 50px;
-    border:none;
-    border-radius:50px;
-    color:#fff;
-    text-decoration:none;
  }
 
 /*======================customer-review css=========================*/
@@ -874,8 +919,8 @@ body{
  }
 
  #customer-review .card{
-    margin-right:5px;
-    margin-left:5px;
+    margin-right:11px;
+    margin-left:11px;
     border:none;
     margin-bottom: 20px;
     background:var(--primary2Color);
@@ -936,7 +981,9 @@ body{
  }
 
  #record .card{
-    padding:25px 0px;
+    padding:25px 0px;   
+    border-radius: 20px;
+    text-align: center;
  }  
 
  #record h5{
@@ -951,7 +998,17 @@ body{
     margin-bottom:0px !important;
     font-weight:500;
  }  
-
+ /* #record .record-card-group{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    text-align: center;
+ }
+ #record .card-record{
+    max-width:280px;
+    padding-left:0px !important;
+    padding-right:0px !important;
+ } */
 
 
  /*======================reacord css=========================*/
@@ -1018,26 +1075,19 @@ body{
  }
 
  #recentworks .work-slide .card{
-    margin-left:5px;
-    margin-right:5px;
- }
-
- #recentworks .viewbtn{
-    padding:10px 25px;
-    border:2px solid var(--primaryColor);
-    border-radius:50px !important;
-    transition: all 0.3s ease-in-out;
-    background:var(--primaryColor);  
+    margin-left:11px;
+    margin-right:11px;
  }
 
  #recentworks .viewbtn:hover{
     background:var(--primaryColor);  
  }
-
-
  #recentworks .viewbtn-top a{
-    color:#fff;
+    color:#000;
     text-decoration:none;
+ }
+ #recentworks .viewbtn-top .btn-outline-primary:hover{
+    color:#fff;
  }
 
  #recentworks .viewbtn-top{
@@ -1056,7 +1106,7 @@ body{
   #faq .accordion-button{
     background: var(--primary2Color);
     color:var(--bcolor);  
-    border-radius:20px; 
+    border-radius:var(--borderradius); 
   }
 
   #faq .accordion-button:focus{
@@ -1330,8 +1380,11 @@ footer ul li a{
 
 @media(max-width:575px){ 
     .ptb{padding:35px 0px !important;}
-    .font-size-heading{ font-size:26px !important; line-height:35px !important;} 
-    #hero-banner h1{line-height:50px;}
+    .font-size-heading{ font-size:26px !important; line-height:35px !important;}
+    #hero-banner{ height:74.7vh;} 
+    #hero-banner h1{line-height:50px; font-size:28px;}
+    #hero-banner .btn-primary{ min-width:160px; font-size:13px;}
+    #hero-banner .btn-outline-primary{ min-width:160px; font-size:13px;}
     #logos::after{ width:100px;}
     #logos::before{ width:100px;}
     #copyright .socialmedia{text-align:center;}

@@ -26,6 +26,10 @@ class HomeController extends Controller
     public function workurl($workurl){
      return view('workshow',compact('workurl'));        
     }
+    public function blogurl($blogurl){
+     return view('blogshow',compact('blogurl'));
+    }
+    
 
     public function contact(){
         return view('contact');

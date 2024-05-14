@@ -16,6 +16,8 @@ Route::get('/blog',[HomeController::class,'blog'])->name('front.blog');
 Route::get('/contact',[HomeController::class,'contact'])->name('front.contact');
 Route::get('/web-development',[HomeController::class,'webdevelopment'])->name('front.webdevelopment');
 Route::get('/work/{workurl:slug}',[HomeController::class,'workurl'])->name('front.workurl');
+Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('front.blogurl');
+
 
 
 

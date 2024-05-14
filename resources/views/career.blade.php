@@ -6,7 +6,7 @@
 </section>
 <section id="openingsjob" class="ptb">
     <div class="container-fluid res-container">
-        <div class="row mx-md-3 mx-lg-3">
+        <div class="row mx-md-5 mx-lg-5 gy-4">
              <div class="col-12">
               <div class="card">
                 <div class="card-header">
@@ -21,18 +21,23 @@
                          <div class="desgination">Graphic Designer</div>
                       </div>
                       <div class="col-12 col-md-6 btngrp">
-                         <a class="viewbtn" href="#connect" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">View Details</a>
-                         <a onclick="myFunction()" class="applybtn">Apply Now <i class="bi bi-arrow-right"></i></a>
+                          <a class="btn btn-outline-primary"  data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">View Details</a>
+                          <a href="#" class="btn btn-primary">Apply Now <i class="bi bi-arrow-right"></i></a>
                       </div>
-                   </div>
+                   </div>                 
                 </div>
                 <div class="card-footer">
                    <span class="jobform"><i class="bi bi-geo-alt"></i> Work From Office</span>
                    <span class="jobtime"><i class="bi bi-clock"></i> Full Time</span>                   
                 </div>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body border-0">
+                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div>
+                  </div>
             </div>
           </div>
-          <div class="col-12">
+          {{-- <div class="col-12">
             <div class="card">
                 <div class="card-header">
                    <div class="row">
@@ -46,8 +51,8 @@
                          <div class="desgination">Graphic Designer</div>
                       </div>
                       <div class="col-12 col-md-6 btngrp">
-                         <a class="viewbtn" href="#connect" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">View Details</a>
-                         <a onclick="myFunction()" class="applybtn">Apply Now <i class="bi bi-arrow-right"></i></a>
+                          <a href="#" class="btn btn-outline-primary">View Details</a>
+                          <a href="#" class="btn btn-primary">Apply Now <i class="bi bi-arrow-right"></i></a>
                       </div>
                    </div>
                 </div>
@@ -56,7 +61,7 @@
                    <span class="jobtime"><i class="bi bi-clock"></i> Full Time</span>                   
                 </div>
             </div>
-        </div>
+          </div> --}}
         </div>
     </div>    
 </section>

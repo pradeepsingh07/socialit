@@ -12,8 +12,8 @@
               <li class="nav-item dropdown has-megamenu">
                  <a class="nav-link dropdown-toggle"  data-bs-auto-close="false" href="#" data-bs-toggle="dropdown">Services</a>
                  <div id="drop-show-menu" class="dropdown-menu megamenu" role="menu">
-                    <div class="container-fluid">
-                       <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-2 g-lg-3">
+                    <div class="container-fluid ">
+                       <div class="row mx-md-5 mx-lg-5 g-md-3 g-lg-3 g-2 row-cols-2 row-cols-md-4 row-cols-lg-4">
                           <div class="col col-12">
                              <a href="{{route('front.webdevelopment')}}"><h6 class="title bg-pink"> <i class="bi bi-code-slash"></i> Web Development</h6></a>
                           </div>

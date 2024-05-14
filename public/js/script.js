@@ -39,7 +39,7 @@ $(".reviews-next").click(function () {
 
 $('.blogs-slide').slick({
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow:4,
     slidesToScroll:1,
     arrows: false,
     dots: false,    
@@ -71,7 +71,7 @@ $('.logo-inner-slide').slick({
     centeredSlides: true,
     dots: false, 
     loop: true,
-    speed: 2500,
+    speed: 4000,
     autoplaySpeed:0,
     pauseOnFocus: false,
     pauseOnHover: false,
@@ -165,6 +165,20 @@ $('.dropdown-toggle').on('click',function(){
       $('.overlay').hide();
    }
 })   
+
+
+$(window).scroll(function() { 
+  var scrollPosition = $(window).scrollTop();
+  if(scrollPosition >= 400){
+     $('#fixed-top').css("position","sticky");  
+     $('#fixed-top').css("top","70px");   
+  }else{
+    $('#fixed-top').css("position","");
+  }
+});
+
+
+
 
 
 

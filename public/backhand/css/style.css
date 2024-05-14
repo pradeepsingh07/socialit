@@ -16165,15 +16165,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-::-moz-selection {
-    background: #222;
-    color: #fff;
-}
-
-::selection {
-    background: #222;
-    color: #fff;
-}
 
 /*===== custom scrollbar ====== */
 

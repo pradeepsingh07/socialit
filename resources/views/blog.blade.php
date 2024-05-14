@@ -6,7 +6,7 @@
 </section>
 <section id="blog-area" class="ptb">
     <div class="container-fluid">
-        <div class="row mx-md-3 mx-lg-3">
+        <div class="row mx-md-5 mx-lg-5 g-4">
             <div class="col-md-4">
                 <a href="">
                    <div class="card">
@@ -87,8 +87,8 @@
                 </div>
               </a>
             </div>
-            <div class="text-center">
-                <button class="loadmore">Load More <i class="bi bi-arrow-right"></i></button>
+            <div class="text-center mt-5">
+                <button class="btn btn-primary">Load More <i class="bi bi-arrow-right"></i></button>
             </div>            
         </div>
     </div>

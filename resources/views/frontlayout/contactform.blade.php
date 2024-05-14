@@ -1,6 +1,6 @@
 <section id="contactform" class="ptb">
     <div class="container-fluid res-container">
-        <div class="row mx-md-3 mx-lg-3 align-items-center">          
+        <div class="row mx-md-5 mx-lg-5 align-items-center">          
             <div class="col-md-6">           
                <form>
                    <h6 class="font-size-heading text-start">let's Connect We're Here to Assist You</h6>         

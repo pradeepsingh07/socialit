@@ -8,7 +8,7 @@
    <h2 class="text-center font-size-heading">Our Recent Works</h2>
    <p class="para-font">Unveil Our Latest Works and Witness Creativity in Motion</p>
 <div class="container-fluid res-container"> 
-   <div class="row mx-md-3 mx-lg-3"> 
+   <div class="row mx-md-3 mx-lg-3 g-4"> 
      <div class="col-md-3">
         <a href="{{route('front.workurl',['workurl'=>'sdfgdf'])}}">
         <div class="card">

@@ -4,8 +4,8 @@
 <h1>Web Development</h1>
 <p class="para-font-hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
 <div class="gap-md-3 gap-3 d-flex">
-     <button data-bs-toggle="modal" data-bs-target="#watchdemo" >Schedule a meeting</button>
-     <button><a href="#">Case Study</a></button>
+    <a class="btn btn-primary">Schedule a Meeting</a>
+    <a class="btn btn-outline-primary">Case Study</a>
 </div>
 </section>
 <section id="service-inner-page" class="ptb">
