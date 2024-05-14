@@ -168,9 +168,9 @@ body{
 #navbar .navbar-nav .nav-item .nav-link:hover{
     opacity:1 !important; 
 }
-#navbar .navbar-nav .nav-item {
-    /* margin-top: auto; */
-}
+/* #navbar .navbar-nav .nav-item {
+    
+} */
 
 .navbar .megamenu{ 
     padding: 1rem;
@@ -1117,9 +1117,9 @@ body{
     border-radius:20px !important;
  }
 
- #faq .accordion-body{
+ /* #faq .accordion-body{
    
- }
+ } */
 
  #faq .accordion-item{
     margin-bottom:20px !important;
