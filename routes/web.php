@@ -3,6 +3,7 @@
 use App\Http\Controllers\frontController\HomeController;
 use App\Http\Controllers\backcontroller\DashboardController;
 use App\Http\Controllers\backcontroller\AuthController;
+use App\Http\Controllers\backcontroller\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,14 +29,17 @@ Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('fron
 // ====================== Admin Routes ===========================
 // ===============================================================
 
-Route::group(['prefix'=>'admin'],function(){
 
- Route::get('/',[AuthController::class,'index'])->name('back.auth');
- Route::get('dashboard',[DashboardController::class,'index'])->name('back.dashboard');
+ Route::group(['prefix'=>'admin'],function(){
 
+    Route::get('/',[AuthController::class,'index'])->name('back.auth');
+    Route::get('dashboard',[DashboardController::class,'index'])->name('back.dashboard');
+    Route::get('testimonial/getdata',[TestimonialController::class,'getdata'])->name('testimonial.getdata');
+    Route::resource('testimonial',TestimonialController::class)->only([
+        'index', 'create','store','edit','update'
+    ]);
 
-
-
+ 
 });
 
 

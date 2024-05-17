@@ -13,20 +13,24 @@
              </div>                 
           </div>
           <div class="dropdown-menu dropdown-menu-right sidebar-brand-dropdown ml-3" aria-labelledby="dropdownMenuLink" tabindex="0">
-            <a class="dropdown-item d-flex justify-content-between align-items-center f-15 text-dark" href="#">Logout </a>
+            <a class="dropdown-item d-flex justify-content-between align-items-center f-15 text-dark" href="#">Logout</a>
           </div>
        </div>
        <div class="sidebar-menu " id="sideMenuScroll">
           <ul>
+            <x-sidebarmenu title="Dashboard" icon='home' href="{{route('back.dashboard')}}" innertitle="Dashboard"/>
+            <x-sidebarmenu title="Testimonial" icon='sliders-h' href="{{route('testimonial.index')}}" innertitle="All Testimonial"/>
+            <x-sidebarmenu title="Career" icon='graduation-cap' href="" innertitle="All Career"/>
+            <x-sidebarmenu title="Blog" icon='book' href="" innertitle="All Blogs"/>
+            <x-sidebarmenu title="Job Resume" icon='graduation-cap' href="" innertitle="All Job Resume"/>
+            <x-sidebarmenu title="Contacts" icon='address-book' href="" innertitle="All Contacts"/>
+            <x-sidebarmenu title="Newsletter" icon='newspaper' href="" innertitle="All Newsletter"/>
             <li class="accordionItem closeIt">
-               <a class="nav-item text-lightest f-15 sidebar-text-color accordionItemHeading " title="Payroll">
-                  <i class="fas fa-home"></i>
-                   <span class="pl-3">Dashboard</span>                     
-                   </a>       
-                  <div class="accordionItemContent pb-2">   
-                     <a class="f-14 text-lightest" href="">Dashboard</a>   
-               </div>
-            </li>             
+               <a class="text-decoration-none nav-item text-lightest f-15 sidebar-text-color" title="Logout">
+                  <i class="fas fa-power-off"></i>
+                   <span class="ps-3">Logout</span>                     
+               </a>
+            </li>          
           </ul>
        </div>
     </div>
