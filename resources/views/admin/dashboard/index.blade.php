@@ -6,12 +6,17 @@
          </div>                
       </div>              
    </div>
-   <div class="col-md-4">
-       <div class="card">
-         <div class="card-body">
-           <h6 class="card-title">Total Clients</h6>
-           <h3 class="card-text"><i class="bi bi-person"></i> 100</h3>
-         </div>
-       </div>
-   </div>  
+   <div class="content-wrapper">
+      <div class="container-fluid">
+          <div class="row">        
+            <x-dashboardcard name="Testimonial" icon="star" href="{{route('testimonial.index')}}" count="{{$testimonial}}"/>
+            <x-dashboardcard name="Career" icon="graduation-cap" href="{{route('career.index')}}" count="{{$career}}"/>
+            <x-dashboardcard name="Contact" icon="phone-alt" href="{{route('contact.index')}}" count="{{$contact}}"/>
+            <x-dashboardcard name="Resume" icon="graduation-cap" href="{{route('jobresume.index')}}" count="{{$resume}}"/>
+
+
+          </div>
+      </div> 
+   </div>
+ 
 </x-adminlayout>

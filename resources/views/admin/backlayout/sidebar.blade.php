@@ -20,10 +20,21 @@
           <ul>
             <x-sidebarmenu title="Dashboard" icon='home' href="{{route('back.dashboard')}}" innertitle="Dashboard"/>
             <x-sidebarmenu title="Testimonial" icon='sliders-h' href="{{route('testimonial.index')}}" innertitle="All Testimonial"/>
-            <x-sidebarmenu title="Career" icon='graduation-cap' href="" innertitle="All Career"/>
-            <x-sidebarmenu title="Blog" icon='book' href="" innertitle="All Blogs"/>
-            <x-sidebarmenu title="Job Resume" icon='graduation-cap' href="" innertitle="All Job Resume"/>
-            <x-sidebarmenu title="Contacts" icon='address-book' href="" innertitle="All Contacts"/>
+            <x-sidebarmenu title="Career" icon='graduation-cap' href="{{route('career.index')}}" innertitle="All Career"/>
+            <x-sidenestedmenu title="Blog" icon="book">
+               <div class=" accordionItemContent pb-2">   
+                  <a class=" text-decoration-none f-14 text-lightest" href="{{route('blog-category.index')}}">All Blog Category</a>   
+                  <a class=" text-decoration-none f-14 text-lightest" href="">All Blog</a>  
+            </div>
+            </x-sidenestedmenu>
+            <x-sidenestedmenu title="Work" icon="box">
+               <div class=" accordionItemContent pb-2">   
+                  <a class=" text-decoration-none f-14 text-lightest" href="">All Client Category</a>   
+                  <a class=" text-decoration-none f-14 text-lightest" href="">All Client Work</a>  
+            </div>
+            </x-sidenestedmenu>
+            <x-sidebarmenu title="Job Resume" icon='graduation-cap' href="{{route('jobresume.index')}}" innertitle="All Job Resume"/>
+            <x-sidebarmenu title="Contacts" icon='address-book' href="{{route('contact.index')}}" innertitle="All Contacts"/>
             <x-sidebarmenu title="Newsletter" icon='newspaper' href="" innertitle="All Newsletter"/>
             <li class="accordionItem closeIt">
                <a class="text-decoration-none nav-item text-lightest f-15 sidebar-text-color" title="Logout">

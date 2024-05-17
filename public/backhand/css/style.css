@@ -45,6 +45,9 @@ body{
     font-family: "Font Awesome 5 Free" !important; 
     transform: rotate(90deg) !important;  
 }
+.swal2-popup {
+    font-size:13px !important;
+}
 
 ::placeholder{
     font-size:12px;

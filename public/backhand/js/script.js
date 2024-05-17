@@ -1,3 +1,7 @@
+$('.file').dropify({
+    imgFileExtensions: ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp']
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     var dropdownBtn = document.getElementById("dropdownBtn");
     var dropdownContent = document.getElementById("dropdownContent");
@@ -17,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
-
 
 
 $(window).on('load', function () {        
