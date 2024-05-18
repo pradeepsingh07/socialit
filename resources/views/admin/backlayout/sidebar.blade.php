@@ -24,7 +24,7 @@
             <x-sidenestedmenu title="Blog" icon="book">
                <div class=" accordionItemContent pb-2">   
                   <a class=" text-decoration-none f-14 text-lightest" href="{{route('blog-category.index')}}">All Blog Category</a>   
-                  <a class=" text-decoration-none f-14 text-lightest" href="">All Blog</a>  
+                  <a class=" text-decoration-none f-14 text-lightest" href="{{route('blog.index')}}">All Blog</a>  
             </div>
             </x-sidenestedmenu>
             <x-sidenestedmenu title="Work" icon="box">

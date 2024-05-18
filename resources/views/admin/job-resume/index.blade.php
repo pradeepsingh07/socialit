@@ -1,7 +1,7 @@
 <x-adminlayout title="Resume"> 
     <div class="content-wrapper">      
         <div class="card border-0 mt-3 p-3" id="table-card">           
-            <table class="table table-bordered" id="datatable">
+            <table class="table table-striped table-bordered" id="datatable">
                 <thead>
                  <tr>
                      <th>Sr No</th>

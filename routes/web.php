@@ -4,6 +4,7 @@ use App\Http\Controllers\frontController\HomeController;
 use App\Http\Controllers\backcontroller\DashboardController;
 use App\Http\Controllers\backcontroller\AuthController;
 use App\Http\Controllers\backcontroller\BlogcategoryController;
+use App\Http\Controllers\backcontroller\BlogController;
 use App\Http\Controllers\backcontroller\TestimonialController;
 use App\Http\Controllers\backcontroller\JobResumeController;
 use App\Http\Controllers\backcontroller\CareerController;
@@ -64,6 +65,12 @@ Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('fron
         'index', 'create','store','edit','update'
     ]);
 
+    Route::get('blog/delete',[BlogController::class,'delete'])->name('blog.delete');
+    Route::get('blog/getdata',[BlogController::class,'getdata'])->name('blog.getdata');
+    Route::post('blog/upload',[BlogController::class,'uploadimage'])->name('blog.upload.image');
+    Route::resource('blog',BlogController::class)->only([
+        'index', 'create','store','edit','update'
+    ]);
 
 
 
