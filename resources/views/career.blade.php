@@ -20,7 +20,7 @@
                       <div class="col-12 col-md-6">
                          <div class="desgination">Graphic Designer</div>
                       </div>
-                      <div class="col-12 col-md-6 btngrp">
+                      <div class="col-12 col-md-6 btngrp d-flex gap-3 justify-content-end">
                           <a class="btn btn-outline-primary"  data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">View Details</a>
                           <a href="#" class="btn btn-primary">Apply Now <i class="bi bi-arrow-right"></i></a>
                       </div>

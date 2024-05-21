@@ -5,9 +5,9 @@
   <p class="para-font-hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
 </section>
 <section id="blog-area" class="ptb">
-    <div class="container-fluid">
+    <div class="container-fluid res-container">
         <div class="row mx-md-5 mx-lg-5 g-4">
-            <div class="col-md-4">
+            <div class="col-12 col-sm-2 col-md-4 col-lg-4">
                 <a href="">
                    <div class="card">
                    <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
@@ -23,7 +23,7 @@
                 </div>
               </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-sm-2 col-md-4 col-lg-4">
                 <a href="">
                    <div class="card">
                    <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
@@ -39,7 +39,7 @@
                 </div>
               </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-sm-2 col-md-4 col-lg-4">
                 <a href="">
                    <div class="card">
                    <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
@@ -55,7 +55,7 @@
                 </div>
               </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-sm-2 col-md-4 col-lg-4">
                 <a href="">
                    <div class="card">
                    <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 
@@ -71,7 +71,7 @@
                 </div>
               </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-sm-2 col-md-4 col-lg-4">
                 <a href="">
                    <div class="card">
                    <img src="{{asset('images/1.webp')}}" class="img-fluid" alt=""/> 

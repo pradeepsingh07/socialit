@@ -18,25 +18,25 @@
                              <a href="{{route('front.webdevelopment')}}"><h6 class="title bg-pink"> <i class="bi bi-code-slash"></i> Web Development</h6></a>
                           </div>
                           <div class="col col-12">
-                             <a href=""><h6 class="title bg-purple"> <i class="bi bi-volume-up"></i> Digital marketing</h6></a>
+                             <a href="{{route('front.digitalmarketing')}}"><h6 class="title bg-purple"> <i class="bi bi-volume-up"></i> Digital marketing</h6></a>
                           </div>
                           <div class="col col-12">
-                             <a href=""><h6 class="title bg-green"> <i class="bi bi-tv"></i> Social Media Marketing</h6></a>
+                             <a href="{{route('front.smm')}}"><h6 class="title bg-green"> <i class="bi bi-tv"></i> Social Media Marketing</h6></a>
                           </div>
                           <div class="col col-12">
-                             <a href=""><h6 class="title bg-yellow"> <i class="bi bi-phone"></i> App Development</h6></a>
+                             <a href="{{route('front.ad')}}"><h6 class="title bg-yellow"> <i class="bi bi-phone"></i> App Development</h6></a>
                           </div>
                           <div class="col col-12">
-                             <a href=""><h6 class="title bg-lightgreen"><i class="bi bi-easel2"></i> UI/UX Design</h6></a>
+                             <a href="{{route('front.uiux')}}"><h6 class="title bg-lightgreen"><i class="bi bi-easel2"></i> UI/UX Design</h6></a>
                           </div>
                           <div class="col col-12">
-                           <a href=""><h6 class="title bg-skyblue"><i class="bi bi-easel2"></i> Graphic Design</h6></a>
+                           <a href="{{route('front.gd')}}"><h6 class="title bg-skyblue"><i class="bi bi-easel2"></i> Graphic Design</h6></a>
                           </div>
                           <div class="col col-12">
-                           <a href=""><h6 class="title bg-orange"><i class="bi bi-easel2"></i> search engine optimization</h6></a>
+                           <a href="{{route('front.seo')}}"><h6 class="title bg-orange"><i class="bi bi-easel2"></i> search engine optimization</h6></a>
                           </div>
                           <div class="col col-12">
-                           <a href=""><h6 class="title bg-lightblack"><i class="bi bi-easel2"></i> branding & advertising</h6></a>
+                           <a href="{{route('front.ba')}}"><h6 class="title bg-lightblack"><i class="bi bi-easel2"></i> branding & advertising</h6></a>
                           </div>
                        </div>
                     </div>                   

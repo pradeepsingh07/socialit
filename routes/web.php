@@ -21,6 +21,18 @@ Route::get('/work',[HomeController::class,'work'])->name('front.work');
 Route::get('/blog',[HomeController::class,'blog'])->name('front.blog');
 Route::get('/contact',[HomeController::class,'contact'])->name('front.contact');
 Route::get('/web-development',[HomeController::class,'webdevelopment'])->name('front.webdevelopment');
+Route::get('/digital-marketing',[HomeController::class,'digitalmarketing'])->name('front.digitalmarketing');
+Route::get('/social-media-marketing',[HomeController::class,'smm'])->name('front.smm');
+Route::get('/app-development',[HomeController::class,'ad'])->name('front.ad');
+Route::get('/ui-ux-design',[HomeController::class,'uiux'])->name('front.uiux');
+Route::get('/graphic-design',[HomeController::class,'gd'])->name('front.gd');
+Route::get('/search-engine-optimization',[HomeController::class,'seo'])->name('front.seo');
+Route::get('/branding-advertising',[HomeController::class,'ba'])->name('front.ba');
+
+
+
+
+
 Route::get('/work/{workurl:slug}',[HomeController::class,'workurl'])->name('front.workurl');
 Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('front.blogurl');
 
