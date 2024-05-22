@@ -8,7 +8,7 @@
            <div class="card-body">
               <form id="submitform" method="post">
                 @csrf
-                @method('post')
+                @method('put')
                  <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">
@@ -40,7 +40,7 @@
                         </div>                        
                      </div>                      
                  </div>
-                 <button class="btn btn-primary f-14" id="submitbtn">Submit <i class="fas fa-long-arrow-alt-right"></i></button>
+                 <button class="btn btn-primary f-14" id="submitbtn">Update <i class="fas fa-long-arrow-alt-right"></i></button>
               </form>              
            </div>
         </div>                     
@@ -54,7 +54,7 @@
         $('#submitbtn').attr('disabled',true)
         const formdata = new FormData(this);
         $.ajax({
-            url:"{{route('blog.store')}}",
+            url:"{{route('blog.update',"$data->id")}}",
             type: 'POST',
             data: formdata,
             contentType: false,
@@ -63,16 +63,17 @@
                      if(res.code == 200){
                        window.location.href="{{route('blog.index')}}"
                      }                    
-                     $('#submitbtn').html('Submit <i class="fas fa-long-arrow-alt-right"></i>');
+                     $('#submitbtn').html('Update <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false)     
                 }
             }) 
     }); 
-     $('#content').summernote({           
+     $('#content').summernote({  
+            fontNames: ['Poppins', 'Arial Black', 'Comic Sans MS', 'Courier New'],         
             callbacks: {
             onImageUpload: function(files, editor, welEditable) {
                 sendFile(files[0], editor, welEditable);
-            }
+            },            
         }
      });
   function sendFile(file, editor, welEditable) {

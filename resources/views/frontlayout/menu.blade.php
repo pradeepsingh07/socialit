@@ -1,5 +1,5 @@
 <section id="navbar">
-  <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
      <div class="container-fluid">
         <a class="navbar-brand" href="{{route('front.index')}}">
          <img src="{{asset('images/logo.png')}}" class="img-fluid" alt="logo">

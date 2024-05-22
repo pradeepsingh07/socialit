@@ -130,6 +130,7 @@ class TestimonialController extends Controller
                 }
                 $data=TestimonialModel::select('image')->where('id',$id)->first();
                 $image = $request->c_image == "" ? $data->image : $filename;
+                
                 if($request->c_image != ""){
                    Storage::delete("public/upload/".$data->image);
                 }

@@ -34,7 +34,9 @@ Route::get('/branding-advertising',[HomeController::class,'ba'])->name('front.ba
 
 
 Route::get('/work/{workurl:slug}',[HomeController::class,'workurl'])->name('front.workurl');
+Route::get('/card-show',[HomeController::class,'cardshow'])->name('front.cardshow');
 Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('front.blogurl');
+
 
 
 

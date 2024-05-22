@@ -56,6 +56,14 @@
     border:2px solid var(--primaryColor) !important;
 }
 
+.btn:focus-visible {
+    color:inherit;
+    background-color:inherit;
+    border-color:2px solid var(--primaryColor);
+    outline: 0;
+    box-shadow:2px solid var(--primaryColor);
+}
+
 .bg-pink{
     background:#FFC0D9;
     color:#000;
@@ -1498,6 +1506,11 @@ footer ul li a{
     font-size:30px;
 }
 
+#skle-img{
+    height:202px !important;
+    width:100%;
+}
+
 /*======================Media Query=========================*/
 
 @media(max-width:575px){ 
@@ -1515,7 +1528,12 @@ footer ul li a{
     #copyright .container .copy{margin-top:10px;}
     #copyright .container .ordercus-1{order:-1 !important;}
     #openingsjob .applybtn , #openingsjob .viewbtn { padding:8px 15px; font-size:13px;}
-    #openingsjob .btngrp{ text-align: start; margin-top:20px;}  
+    #openingsjob .btngrp{ text-align: start; margin-top:20px; align-items: center;} 
+    #openingsjob .btngrp .btn-outline-primary , .btn-primary{
+        min-width:130px !important;
+        font-size:13px;
+    }
+
     #contactform .col-md-6:last-child{margin-top:25px;}
     .work .imgwork img{width:100px;}
     #hero-banner button{ width:150px; font-size:12px; height:40px;}

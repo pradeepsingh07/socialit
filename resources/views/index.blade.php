@@ -3,7 +3,7 @@
 <section id="hero-banner">
 <h1>Empowering Businesses <br> in the Digital Realm</h1>
 <p class="para-font-hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
-<div class="gap-3 d-flex">
+<div class="gap-3 d-flex align-items-center">
      <a class="btn btn-outline-primary w-100">Case Study</a>
      <a class="btn btn-primary w-100">Schedule a Meeting</a>     
 </div>
@@ -275,12 +275,8 @@
                             <div class="card-title date">15 Feb 2024</div>
                             <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
                             <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                            </div>
-                            {{-- <div class="card-footer d-flex">
-                                 <div class="authorname">Pradeep Singh</div>
-                                 <div class="category">Web Development</div> 
-                            </div> --}}
-                      </div>
+                            </div>                       
+                          </div>
                     </a>
                </div> 
                <div class="blog-btn-slide">

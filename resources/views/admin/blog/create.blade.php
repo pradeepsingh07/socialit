@@ -70,7 +70,7 @@
     }); 
      $('#content').summernote({           
             callbacks: {
-            onImageUpload: function(files, editor, welEditable) {
+             onImageUpload: function(files, editor, welEditable) {
                 sendFile(files[0], editor, welEditable);
             }
         }
@@ -90,7 +90,7 @@
         $('#content').summernote('insertImage', res.url);
       }
     });
-  }
+  } 
 </script>        
 @endpush
 </x-adminlayout>

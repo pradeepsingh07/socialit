@@ -6,7 +6,7 @@
         <div class="card mt-3">
            <div class="card-header py-3"><h5>Create Career</h5></div>
            <div class="card-body">
-              <form id="submitform" method="post">
+            <form id="submitform" method="post">
                 @csrf
                 @method('post')
                  <div class="row">
@@ -54,13 +54,14 @@
                     </div>                               
                  </div>
                  <button class="btn btn-primary f-14" id="submitbtn">Submit <i class="fas fa-long-arrow-alt-right"></i></button>
-              </form>              
+              </form> 
            </div>
         </div>                     
     </div>    
 @push('js')
 <script>
-    $('#submitform').on('submit',function(e){
+     $(document).ready(function(){
+    $(document).on('submit','#submitform',function(e){
         e.preventDefault();
         $('#submitbtn').html('<div class="spinner-border" role="status"></div> Loading...');
         $('#submitbtn').attr('disabled',true)
@@ -76,12 +77,14 @@
                        window.location.href="{{route('career.index')}}"
                      }                    
                      $('#submitbtn').html('Submit <i class="fas fa-long-arrow-alt-right"></i>');
-                     $('#submitbtn').attr('disabled',false)     
+                     $('#submitbtn').attr('disabled',false);
+                     
                 }
             }) 
     });
+  });
     $('#addbtn').click(function () {    
-        $('#first-input').append('<div class="input-group mb-3 close-row"><input name="job_details[]" type="text" class="f-14 form-control" aria-describedby="basic-addon1"><button type="button" class="close input-group-text  closeRow" onclick="closeinput()"id="basic-addon1">X</button></div>')         
+        $('#first-input').append('<div class="input-group mb-3 close-row"><input name="job_details[]" type="text" class="f-14 form-control" aria-describedby="basic-addon1"><button type="button" class="btn btn-danger closeRow" onclick="closeinput()"id="basic-addon1">X</button></div>')         
     });
     $(document).on("click", ".closeRow", function(){
         $(this).closest(".close-row").remove();

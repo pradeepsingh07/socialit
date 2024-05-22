@@ -26,8 +26,7 @@ class BlogController extends Controller
         return view('admin/blog/create',compact('datas'));
     }
 
-    public function getdata(Request $request){
-          
+    public function getdata(Request $request){          
         if($request->ajax()){    
             $start = $request->get('start'); 
             $length = $request->get('length');
@@ -69,9 +68,9 @@ class BlogController extends Controller
                 "data" => $jsondata
             ]);
         }
-    }
+     }
 
-    public function uploadimage(Request $request){
+     public function uploadimage(Request $request){
         if($request->hasFile('file')){
         $filename = 'blog'.rand(100000,999999).'.'.$request->file("file")->getClientOriginalExtension();
         $url = $request->file("file")->storeAs("public/blog-image",$filename);
@@ -79,10 +78,9 @@ class BlogController extends Controller
         }else{
             return response()->json('Something Went Wrong');
         }
-    }
-
-    public function store(Request $request)
-    {
+     }
+     public function store(Request $request)    
+     {
         if($request->ajax()){    
             $validation = Validator::make($request->all(),[
                 'category'=>'required | numeric',   
@@ -112,23 +110,53 @@ class BlogController extends Controller
                 ]);
             }
         }
-    }
-
-    public function edit(string $id)
-    {  
+     }
+     public function edit(string $id){  
         $cates = BlogcategoryModel::get();
         $data = BlogModel::where('id',$id)->first();
         return view('admin/blog/edit',compact('data','cates'));
+     }   
+    public function update(Request $request, string $id){
+        if($request->ajax()){    
+            $validation = Validator::make($request->all(),[
+                'category'=>'required | numeric',   
+                'title'=>'required | string',             
+                'content'=>'required',
+                
+            ]);
+            if($validation->fails()){
+                return response()->json([
+                    'code'=>'400',
+                    'message'=>$validation->errors(),
+                ]);
+            }else{
+                if($request->t_image != ""){
+                    $filename = 'blog'.rand(100000,999999).'.'.$request->file("t_image")->getClientOriginalExtension();
+                    $request->file("t_image")->storeAs("public/upload",$filename);
+                  }
+                  $data=BlogModel::select('thumbnail_image')->where('id',$id)->first();
+                  $image = $request->t_image == "" ? $data->thumbnail_image : $filename;
+
+                  if($request->t_image != ""){
+                     Storage::delete("public/upload/".$data->thumbnail_image);                    
+                  }
+                  BlogModel::where('id',$id)->update([
+                      'title'=>$request->title,  
+                      'thumbnail_image'=>$image,
+                      'slug'=> Str::slug($request->title),               
+                      'content'=>$request->content,   
+                      'c_id'=>$request->category,
+                  ]);
+                  session()->flash('type','success');
+                  session()->flash('message','Successfully Updated');
+                  return response()->json([
+                      'code'=>'200'
+                  ]);
+            }
+        }
     }
 
-   
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    public function delete(Request $request)
-    {
+    public function delete(Request $request){
         BlogModel::where('id',$request->id)->delete();
         return response()->json([
             'code'=>'200'

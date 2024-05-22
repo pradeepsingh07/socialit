@@ -65,7 +65,7 @@ class CareerController extends Controller
 
     public function store(Request $request){
 
-        if($request->ajax()){    
+        if($request->ajax()){ 
             $validation = Validator::make($request->all(),[
                 'title'=>'required | string',   
                 'd_name'=>'required | string',  
@@ -150,4 +150,13 @@ class CareerController extends Controller
             'code'=>'200'
         ]);
     }
+
+    public function viewform(){
+        $html = view('admin/career/ajax/create')->render();
+        return response()->json([
+            'code'=>'200',
+            'html'=>$html,
+        ]);
+    }
+
 }

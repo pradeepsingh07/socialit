@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\frontController;
 use App\Http\Controllers\Controller;
+use App\Models\BlogModel;
+use App\Models\CareerModel;
 use Illuminate\Http\Request;
 
 
@@ -10,21 +12,16 @@ class HomeController extends Controller
     public function index(){
         return view('index');
     }
-    public function blog(){
+    public function blog(){       
         return view('blog');
     }
     public function career(){
-        return view('career');
+        $datas = CareerModel::where('status','active')->get();
+        return view('career',compact('datas'));
     }
     public function work(){
         return view('work');
-    }
-    public function workurl($workurl){
-     return view('workshow',compact('workurl'));        
-    }
-    public function blogurl($blogurl){
-     return view('blogshow',compact('blogurl'));
-    } 
+    }   
     public function contact(){
         return view('contact');
     }
@@ -52,4 +49,33 @@ class HomeController extends Controller
     public function ba(){
         return view('ba');
     }
+
+    public function workurl($workurl){
+        return view('workshow',compact('workurl'));        
+    }
+
+    //  Blog  
+
+    public function blogurl($blogurl){        
+        $count = BlogModel::where('slug',$blogurl)->count();
+        if($count == 1){
+            $data = BlogModel::where('slug',$blogurl)->first();
+            return view('blogshow',compact('data'));
+        }else{
+            abort('404');
+        } 
+    } 
+
+    public function cardshow(Request $request){
+        $datas = BlogModel::with('blogdata')
+        ->limit(1)
+        ->offset($request->page)
+        ->get();
+        $html =  view('frontlayout.ajax-blog',compact('datas'))->render();
+        return response()->json([
+            'html'=>$html,
+            'message'=>'success'
+        ]); 
+    }
+
 }
