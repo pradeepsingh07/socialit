@@ -28,7 +28,15 @@ Route::get('/app-development',[HomeController::class,'ad'])->name('front.ad');
 Route::get('/ui-ux-design',[HomeController::class,'uiux'])->name('front.uiux');
 Route::get('/graphic-design',[HomeController::class,'gd'])->name('front.gd');
 Route::get('/search-engine-optimization',[HomeController::class,'seo'])->name('front.seo');
-Route::get('/branding-advertising',[HomeController::class,'ba'])->name('front.ba');
+Route::get('/search-engine-marketing',[HomeController::class,'sem'])->name('front.sem');
+Route::get('/branding-packaging',[HomeController::class,'ba'])->name('front.ba');
+Route::get('/google-my-bussiness',[HomeController::class,'gmb'])->name('front.gmb');
+Route::get('/advertisement',[HomeController::class,'a'])->name('front.a');
+Route::get('/e-commerce-development',[HomeController::class,'ecd'])->name('front.ecd');
+Route::get('/logo-design',[HomeController::class,'l'])->name('front.l');
+Route::get('/print-media',[HomeController::class,'pm'])->name('front.pm');
+Route::get('/digital-banners',[HomeController::class,'db'])->name('front.db');
+Route::get('/motion-graphics',[HomeController::class,'mg'])->name('front.mg');
 
 
 
@@ -89,6 +97,8 @@ Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('fron
     ]);
 
 
+    Route::get('work-category/delete',[WorkcategoryController::class,'delete'])->name('workcategory.delete');
+    Route::get('work-category/getdata',[WorkcategoryController::class,'getdata'])->name('workcategory.getdata');
     Route::resource('work-category',WorkcategoryController::class)->only([
         'index', 'create','store','edit','update'
     ]);

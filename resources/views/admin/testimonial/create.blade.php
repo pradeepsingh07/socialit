@@ -68,4 +68,4 @@
         });
     </script>        
 @endpush
- </x-adminlayout>
+</x-adminlayout>

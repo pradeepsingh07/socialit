@@ -1,7 +1,7 @@
 <x-adminlayout title="Edit Category"> 
     <div class="content-wrapper">
         <div>
-            <a href="{{route('blog-category.index')}}" class="btn btn-primary f-14"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+            <a href="{{route('work-category.index')}}" class="btn btn-primary f-14"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
         </div> 
         <div class="card mt-3">
            <div class="card-header py-3"><h5>Edit Category</h5></div>
@@ -30,14 +30,14 @@
         $('#submitbtn').attr('disabled',true)
         const formdata = new FormData(this);
         $.ajax({
-            url:"{{route('blog-category.update',"$data->id")}}",
+            url:"{{route('work-category.update',"$data->id")}}",
             type: 'POST',
             data: formdata,
             contentType: false,
             processData: false,
             success:function(res){
                      if(res.code == 200){
-                       window.location.href="{{route('blog-category.index')}}"
+                       window.location.href="{{route('work-category.index')}}"
                      }                    
                      $('#submitbtn').html('Update <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false)     

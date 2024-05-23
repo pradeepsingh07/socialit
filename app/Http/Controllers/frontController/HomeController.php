@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontController;
 use App\Http\Controllers\Controller;
 use App\Models\BlogModel;
 use App\Models\CareerModel;
+use App\Models\WorkcategoryModel;
 use Illuminate\Http\Request;
 
 
@@ -20,7 +21,8 @@ class HomeController extends Controller
         return view('career',compact('datas'));
     }
     public function work(){
-        return view('work');
+        $datas = WorkcategoryModel::get();
+        return view('work',compact('datas'));
     }   
     public function contact(){
         return view('contact');
@@ -46,8 +48,32 @@ class HomeController extends Controller
     public function seo(){
         return view('seo');
     }
+    public function sem(){
+        return view('sem');
+    }
     public function ba(){
         return view('ba');
+    }
+    public function gmb(){
+        return view('gmb');
+    }
+    public function a(){
+        return view('a');
+    }
+    public function ecd(){
+        return view('ecd');
+    }
+    public function l(){
+        return view('l');
+    }
+    public function pm(){
+        return view('pm');
+    }
+    public function db(){
+        return view('db');
+    }
+    public function mg(){
+        return view('mg');
     }
 
     public function workurl($workurl){

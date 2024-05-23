@@ -1,16 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\backcontroller;
-
 use App\Http\Controllers\Controller;
 use App\Models\WorkcategoryModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class WorkcategoryController extends Controller
 {
    
-    public function index()
-    {
+    public function index(){
         return view('admin/work-category/index');
     }
 
@@ -36,7 +36,7 @@ class WorkcategoryController extends Controller
                 $jsondata[]=array(
                    'index'=>$key+1,
                    'c_name'=>$data->category_name,           
-                   'action'=>'<a href="'.route('blog-category.edit',$data->id).'" class="py-2 px-2 btn fw-medium f-12 badge bg-success"><i class="fas fa-edit"></i></a> <a onclick="deletedata('.$data->id.')" href="javascript:void(0);" class="py-2 px-2 btn fw-medium f-12 badge bg-danger"><i class="fas fa-trash-alt"></i></a>'
+                   'action'=>'<a href="'.route('work-category.edit',$data->id).'" class="py-2 px-2 btn fw-medium f-12 badge bg-success"><i class="fas fa-edit"></i></a> <a onclick="deletedata('.$data->id.')" href="javascript:void(0);" class="py-2 px-2 btn fw-medium f-12 badge bg-danger"><i class="fas fa-trash-alt"></i></a>'
                 ); 
             } 
             return response()->json([
@@ -49,38 +49,67 @@ class WorkcategoryController extends Controller
 
     }
     
-    public function create()
-    {
-        //
+    public function create(){
+        return view('admin/work-category/create');
     }
 
+    public function store(Request $request){
+        if($request->ajax()){    
+            $validation = Validator::make($request->all(),[
+                'c_name'=>'required | string',                
+            ]);
+
+            if($validation->fails()){
+                return response()->json([
+                    'code'=>'400',
+                    'message'=>$validation->errors(),
+                ]);
+            }else{
+                WorkcategoryModel::create([
+                    'category_name'=>$request->c_name,               
+                ]);
+                session()->flash('type','success');
+                session()->flash('message','Successfully Created');
+                return response()->json([
+                    'code'=>'200'
+                ]);
+            }
+        }
+    }
     
-    public function store(Request $request)
-    {
-        //
+    public function edit(string $id){
+        $data=WorkcategoryModel::where('id',$id)->first();
+        return view('admin/work-category/edit',compact('data'));        
     }
-
    
-    public function show(string $id)
-    {
-        //
-    }
+    public function update(Request $request, string $id){
+        if($request->ajax()){    
+            $validation = Validator::make($request->all(),[
+                'c_name'=>'required | string',                
+            ]);
 
-    
-    public function edit(string $id)
-    {
-        //
+            if($validation->fails()){
+                return response()->json([
+                    'code'=>'400',
+                    'message'=>$validation->errors(),
+                ]);
+            }else{
+                WorkcategoryModel::where('id',$id)->update([
+                    'category_name'=>$request->c_name,               
+                ]);
+                session()->flash('type','success');
+                session()->flash('message','Successfully Updated');
+                return response()->json([
+                    'code'=>'200'
+                ]);
+            }
+        }
     }
-
    
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-   
-    public function destroy(string $id)
-    {
-        //
+    public function delete(Request $request){
+        WorkcategoryModel::where('id',$request->id)->delete();
+        return response()->json([
+            'code'=>'200'
+        ]);
     }
 }

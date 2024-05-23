@@ -1,7 +1,7 @@
 <x-adminlayout title="Work Category"> 
     <div class="content-wrapper">   
         <div>
-            <a href="{{route('blog-category.create')}}" class="btn btn-primary f-14"><i class="fas fa-plus"></i> Add Category</a>
+            <a href="{{route('work-category.create')}}" class="btn btn-primary f-14"><i class="fas fa-plus"></i> Add Category</a>
         </div>   
         <div class="card border-0 mt-3 p-3" id="table-card">           
             <table class="table table-striped table-bordered" id="datatable">
@@ -20,7 +20,7 @@
 @push('js')
 <script>  
     const tabledata = new DataTable('#datatable', {
-     ajax: '{{route('blogcategory.getdata')}}',
+     ajax: '{{route('workcategory.getdata')}}',
      processing: true,
      serverSide: true,   
      columns: [ 
@@ -30,6 +30,6 @@
       ]     
     });    
 </script>  
-<x-delete href="blogcategory.delete"/>
+<x-delete href="workcategory.delete"/>
 @endpush   
  </x-adminlayout>
