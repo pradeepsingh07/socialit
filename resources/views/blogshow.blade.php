@@ -7,8 +7,8 @@
     <div class="container-fluid res-container">
          <div class="row mx-md-5 mx-lg-5">
               <div class="col-md-8">
-                <div class="card w-100">
-                    <h1>{{$data->title}}</h1>
+                <h1 class="text-capitalize">{{$data->title}}</h1>
+                <div class="card w-100 mt-5">                    
                     <div class="content-area mt-4">
                          {!! htmlspecialchars_decode($data->content) !!}
                     </div> 

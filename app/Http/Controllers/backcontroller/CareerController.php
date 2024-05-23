@@ -38,10 +38,10 @@ class CareerController extends Controller
                    'd_name'=>$data->designation_name,
                    'job_type'=>$data->job_type,
                    'work_type'=>$data->work_type,
-                   'job_deatils'=>'<button class="py-2 btn badge bg-primary fs-13 fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                   'job_deatils'=>'<button class="py-2 btn badge bg-primary fs-13 fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample'.$key.'" aria-expanded="false" aria-controls="collapseExample'.$key.'">
                       View Details
                      </button>
-                     <div class="collapse border-0" id="collapseExample">
+                     <div class="collapse border-0" id="collapseExample'.$key.'">
                     <div class="card card-body border-0 shadow-none">
                        '.$job_data.'
                     </div>

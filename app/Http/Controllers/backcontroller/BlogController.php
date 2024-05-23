@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\backcontroller;
-
 use App\Http\Controllers\Controller;
 use App\Models\BlogcategoryModel;
 use App\Models\BlogModel;
@@ -9,18 +8,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use DOMDocument;
 
 
 class BlogController extends Controller
 {
   
-    public function index()
-    {
+    public function index(){
        return view('admin/blog/index');
     }
   
-    public function create()
-    {
+    public function create(){
         $datas = BlogcategoryModel::select('id','category_name')
         ->latest('id','DESC')->get();
         return view('admin/blog/create',compact('datas'));
@@ -79,8 +77,7 @@ class BlogController extends Controller
             return response()->json('Something Went Wrong');
         }
      }
-     public function store(Request $request)    
-     {
+     public function store(Request $request){
         if($request->ajax()){    
             $validation = Validator::make($request->all(),[
                 'category'=>'required | numeric',   
@@ -157,9 +154,32 @@ class BlogController extends Controller
     }
 
     public function delete(Request $request){
+        $getdata = BlogModel::select('content')
+        ->where('id',$request->id)
+        ->first();
+        $decode_data = htmlspecialchars_decode($getdata->content);
+        $dom = new DOMDocument();
+        $dom->loadHTML($decode_data);
+        $imgTags = $dom->getElementsByTagName('img');
+        foreach ($imgTags as $imgTag) {       
+            $src = $imgTag->getAttribute('src');
+            $filename = pathinfo($src, PATHINFO_BASENAME);
+            $filePath = "public/blog-image/{$filename}";
+            Storage::delete($filePath);        
+        }
         BlogModel::where('id',$request->id)->delete();
         return response()->json([
             'code'=>'200'
         ]);
+    }
+    public function deleteimg(Request $request){ 
+        if ($request->ajax()) {
+            $filePath = "public/blog-image/{$request->file}";            
+            if (Storage::exists($filePath)) {
+                Storage::delete($filePath);
+                return response()->json(['status' => 'success', 'code' => 200]);
+            }        
+            return response()->json(['status' => 'error', 'message' => 'File not found', 'code' => 404], 404);
+        }
     }
 }

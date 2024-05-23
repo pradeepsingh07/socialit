@@ -9,6 +9,7 @@ use App\Http\Controllers\backcontroller\TestimonialController;
 use App\Http\Controllers\backcontroller\JobResumeController;
 use App\Http\Controllers\backcontroller\CareerController;
 use App\Http\Controllers\backcontroller\ContactController;
+use App\Http\Controllers\backcontroller\WorkcategoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -82,7 +83,13 @@ Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('fron
     Route::get('blog/delete',[BlogController::class,'delete'])->name('blog.delete');
     Route::get('blog/getdata',[BlogController::class,'getdata'])->name('blog.getdata');
     Route::post('blog/upload',[BlogController::class,'uploadimage'])->name('blog.upload.image');
+    Route::post('blog/delete-image',[BlogController::class,'deleteimg'])->name('blog.delete.image');
     Route::resource('blog',BlogController::class)->only([
+        'index', 'create','store','edit','update'
+    ]);
+
+
+    Route::resource('work-category',WorkcategoryController::class)->only([
         'index', 'create','store','edit','update'
     ]);
 

@@ -29,7 +29,7 @@
             </x-sidenestedmenu>
             <x-sidenestedmenu title="Work" icon="box">
                <div class=" accordionItemContent pb-2">   
-                  <a class=" text-decoration-none f-14 text-lightest" href="">All Client Category</a>   
+                  <a class=" text-decoration-none f-14 text-lightest" href="{{route('work-category.index')}}">All Category</a>   
                   <a class=" text-decoration-none f-14 text-lightest" href="">All Client Work</a>  
             </div>
             </x-sidenestedmenu>

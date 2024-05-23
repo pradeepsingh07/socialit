@@ -68,10 +68,14 @@
                 }
             }) 
     }); 
-     $('#content').summernote({           
+     $('#content').summernote({  
+            fontNames: ['Poppins', 'Arial Black', 'Comic Sans MS', 'Courier New'],         
             callbacks: {
              onImageUpload: function(files, editor, welEditable) {
                 sendFile(files[0], editor, welEditable);
+            },onMediaDelete:function(target, editor, editable) {
+                     var deletesrc = target[0].src.split('/').pop(); 
+                     deleteImage(deletesrc);                    
             }
         }
      });
@@ -91,6 +95,22 @@
       }
     });
   } 
+  function deleteImage(e){
+    data = new FormData();
+    data.append("file", e);
+    data.append("_token","{{csrf_token()}}");
+    $.ajax({
+      data: data,
+      type: "POST",
+      url: "{{route('blog.delete.image')}}",
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function(res) {
+        $('#content').summernote('insertImage', res.url);
+      }
+    });
+  }
 </script>        
 @endpush
 </x-adminlayout>
