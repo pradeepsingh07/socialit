@@ -30,7 +30,7 @@
             <x-sidenestedmenu title="Work" icon="box">
                <div class=" accordionItemContent pb-2">   
                   <a class=" text-decoration-none f-14 text-lightest" href="{{route('work-category.index')}}">All Category</a>   
-                  <a class=" text-decoration-none f-14 text-lightest" href="">All Work</a>  
+                  <a class=" text-decoration-none f-14 text-lightest" href="{{route('work.index')}}">All Work</a>  
             </div>
             </x-sidenestedmenu>
             <x-sidebarmenu title="Job Resume" icon='graduation-cap' href="{{route('jobresume.index')}}" innertitle="All Job Resume"/>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogModel;
 use App\Models\CareerModel;
 use App\Models\WorkcategoryModel;
+use App\Models\WorkModel;
 use Illuminate\Http\Request;
 
 
@@ -22,7 +23,8 @@ class HomeController extends Controller
     }
     public function work(){
         $datas = WorkcategoryModel::get();
-        return view('work',compact('datas'));
+        $catdatas = WorkModel::with('withdata')->get();
+        return view('work',compact('datas','catdatas'));
     }   
     public function contact(){
         return view('contact');
@@ -76,12 +78,13 @@ class HomeController extends Controller
         return view('mg');
     }
 
+    //  Work 
     public function workurl($workurl){
-        return view('workshow',compact('workurl'));        
+        $data = WorkModel::where('slug',$workurl)->first();
+        return view('workshow',compact('data'));        
     }
 
     //  Blog  
-
     public function blogurl($blogurl){        
         $count = BlogModel::where('slug',$blogurl)->count();
         if($count == 1){
@@ -91,7 +94,6 @@ class HomeController extends Controller
             abort('404');
         } 
     } 
-
     public function cardshow(Request $request){
         $datas = BlogModel::with('blogdata')
         ->limit(1)

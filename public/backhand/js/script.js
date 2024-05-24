@@ -1,7 +1,6 @@
 $('.file').dropify({
-    imgFileExtensions: ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp']
+    imgFileExtensions: ['png', 'jpg', 'jpeg','webp']
 });
-
 document.addEventListener("DOMContentLoaded", function() {
     var dropdownBtn = document.getElementById("dropdownBtn");
     var dropdownContent = document.getElementById("dropdownContent");

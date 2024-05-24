@@ -2,7 +2,7 @@
    <section id="service-inner-page-2nd" class="ptb">
         <div class="container-fluid res-container">
             <div class="row mx-md-5 mx-lg-5 g-4">
-                    <div class="col-md-12"><img src="{{asset('images/web-development/0.webp')}}" class="img-fluid" alt=""/></div>  
+                    <div class="col-md-12"><img src="{{asset('images/web-development/responsive.png')}}" class="img-fluid" alt=""/></div>  
                     <div class="col-md-5">
                         <div class="card-header mb-3">Responsiveness</div>
                         <div class="card-body">
@@ -15,10 +15,10 @@
                </div>
           </div>
     </section>    
-    <x-servicesection order="order-1" order2="order-2" imgsection="{{asset('images/web-development/1.webp')}}" headertitle="Blueprint of your website" title="Wireframing : Crafting Your Website Blueprint" p="Craft the blueprint of your website with precision and clarity, ensuring every element is strategically placed for optimal user engagement and functionality."/>
-    <x-servicesection order="order-2" order2="order-1" imgsection="{{asset('images/web-development/2.webp')}}" headertitle="UI/UX Experts" title="Stunning Websites for Everyone: User-Friendly Design by Our Team" p="Get stunning websites designed for everyone! Our UI/UX experts craft user-friendly designs that are visually captivating, ensuring an exceptional online experience for your visitors."/>
-    <x-servicesection order="order-1" order2="order-2" imgsection="{{asset('images/web-development/3.webp')}}" headertitle="Visual Elements" title="The Significance of Banners and Images" p="Schedule multiple posts across accounts and networks simultaneously and track them all through an intuitive visual calendar — filtering by date, status, channel, location, and region."/>
-    <x-servicesection order="order-2" order2="order-1" imgsection="{{asset('images/web-development/4.webp')}}" headertitle="Website Performance" title="Tracking Success: The Role of Google Analytics & Search Console" p="Understand your website's success and how users interact with it. Improve visibility and engagement by refining strategies based on insightful data."/>
+    <x-servicesection order="order-1" order2="order-2" imgsection="{{asset('images/web-development/wireframing.png')}}" headertitle="Blueprint of your website" title="Wireframing : Crafting Your Website Blueprint" p="Craft the blueprint of your website with precision and clarity, ensuring every element is strategically placed for optimal user engagement and functionality."/>
+    <x-servicesection order="order-2" order2="order-1" imgsection="{{asset('images/web-development/ui-ux.png')}}" headertitle="UI/UX Experts" title="Stunning Websites for Everyone: User-Friendly Design by Our Team" p="Get stunning websites designed for everyone! Our UI/UX experts craft user-friendly designs that are visually captivating, ensuring an exceptional online experience for your visitors."/>
+    <x-servicesection order="order-1" order2="order-2" imgsection="{{asset('images/web-development/ba.png')}}" headertitle="Visual Elements" title="The Significance of Banners and Images" p="Schedule multiple posts across accounts and networks simultaneously and track them all through an intuitive visual calendar — filtering by date, status, channel, location, and region."/>
+    <x-servicesection order="order-2" order2="order-1" imgsection="{{asset('images/web-development/gsc.png')}}" headertitle="Website Performance" title="Tracking Success: The Role of Google Analytics & Search Console" p="Understand your website's success and how users interact with it. Improve visibility and engagement by refining strategies based on insightful data."/>
     {{-- <x-servicesection order="order-1" order2="order-2" imgsection="{{asset('images/web-development/5.webp')}}" headertitle="Review Translation" title="Translate reviews and responses with AI" p="You don’t need a translator to serve multilingual customers. Birdeye Reviews will automatically translate reviews into English — then translate your response in your customer’s language."/>
     <x-servicesection order="order-2" order2="order-1" imgsection="{{asset('images/web-development/6.webp')}}" headertitle="Review Widgets" title="Share reviews on your website" p="Keep five-star feedback front and center. Showcase new reviews on your website and turn first-time visitors into repeat customers."/> --}}
 </x-slayout>

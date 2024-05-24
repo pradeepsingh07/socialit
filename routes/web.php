@@ -10,9 +10,8 @@ use App\Http\Controllers\backcontroller\JobResumeController;
 use App\Http\Controllers\backcontroller\CareerController;
 use App\Http\Controllers\backcontroller\ContactController;
 use App\Http\Controllers\backcontroller\WorkcategoryController;
+use App\Http\Controllers\backcontroller\WorkController;
 use Illuminate\Support\Facades\Route;
-
-
 
 
 
@@ -103,6 +102,12 @@ Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('fron
         'index', 'create','store','edit','update'
     ]);
 
+    Route::get('work/delete',[WorkController::class,'delete'])->name('work.delete');
+    Route::get('work/getimages',[WorkController::class,'getimages'])->name('work.getimages');
+    Route::get('work/getdata',[WorkController::class,'getdata'])->name('work.getdata');
+    Route::resource('work',WorkController::class)->only([
+        'index', 'create','store','edit','update'
+    ]);
 
 
  

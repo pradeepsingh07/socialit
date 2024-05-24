@@ -22,12 +22,28 @@
             <select class="form-select mt-3" id="mobileNavSelect">
             </select>           
             <div class="tab-content  mt-5" id="pills-tabContent">
-              @foreach ($datas as $key=>$data)
-              <div id="tab{{$key}}" class="tab-pane fade {{$key == 0  ? 'show active' : '' }}" role="tabpanel">
-                 {{$key}}
-              </div>          
-              @endforeach
-            </div>
+                  @foreach ($datas as $key=>$data)
+                  <div id="tab{{$key}}" class="tab-pane fade {{$key == 0  ? 'show active' : '' }}" role="tabpanel">
+                      <div class="row mx-md-3 mx-lg-3 g-4">  
+                           @foreach($catdatas as $catdata)
+                            @foreach($catdata->withdata as $withcat)
+                             @php $cate_name = $withcat->category_name; @endphp
+                            @endforeach  
+                            @if($data->category_name == $cate_name || $data->category_name == 'All')
+                            <div class="col-md-3">
+                              <a href="{{route('front.workurl',['workurl'=>$catdata->slug])}}">
+                              <div class="card">
+                                 <img src="{{asset('storage/upload/work/'.$catdata->thumbnail_image)}}" class="img-fluid" alt=""/> 
+                                  <div class="readmore"><img src="{{asset('images/right.png')}}" class="img-fluid"/></div>      
+                              </div>
+                             </a>
+                            </div>
+                            @endif
+                            @endforeach
+                      </div>    
+                   </div>          
+                  @endforeach
+             </div>
          </div>
       </div>
    </div>

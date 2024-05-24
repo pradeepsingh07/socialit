@@ -20,45 +20,28 @@
                        <div class="row mx-md-5 mx-lg-5">
                         <div class="col-md-4 col-lg-4 col-12">
                            <h6 class="">Marketing</h6>
-                            <ul class="list-group border-0 mt-4">
-                              <a href="{{route('front.smm')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Social Media Marketing</li></a>
-                              <a href="{{route('front.seo')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Search Engine Optimization (SEO)</li></a>
-                              <a href="{{route('front.sem')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Search Engine Marketing (SEM)</li></a>
-                              <a href="{{route('front.gmb')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Google My Business</li></a>
-                              <a href="{{route('front.a')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Advertisement</li></a>
-                            </ul>
+                             <x-marketing/>
                          </div>
                          <div class="col-md-4 col-lg-4 col-12">
                            <h6 class="">Development</h6>
-                           <ul class="list-group border-0 mt-4">
-                              <a href="{{route('front.ecd')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>E-commerce Development</li></a>
-                              <a href="{{route('front.webdevelopment')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Web Development</li></a>
-                              <a href="{{route('front.ad')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>App Development</li></a>
-                            </ul>                          
+                             <x-dev/>                         
                          </div>
                          <div class="col-md-4 col-lg-4 col-12">
                            <h6 class="">Design</h6>
-                           <ul class="list-group border-0 mt-4">
-                              <a href="{{route('front.l')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Logo Design</li></a>
-                              <a href="{{route('front.ba')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Branding & Packaging</li></a>
-                              <a href="{{route('front.pm')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Print Media</li></a>
-                              <a href="{{route('front.uiux')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>UI/UX Design</li></a>
-                              <a href="{{route('front.db')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Digital Banners</li></a>
-                              <a href="{{route('front.mg')}}"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Motion Graphics</li></a>
-                            </ul>
+                            <x-design/>    
                          </div>
                        </div>
                     </div>                   
                  </div>
               </li>
               <li class="nav-item">
-                 <a class="nav-link" href="{{route('front.work')}}">works</a>
+                 <a class="nav-link" href="{{route(config('constant.work'))}}">works</a>
               </li>
               <li class="nav-item">
-                 <a class="nav-link" href="{{route('front.career')}}">career</a>
+                 <a class="nav-link" href="{{route(config('constant.career'))}}">career</a>
               </li>
               <li class="nav-item">
-                 <a class="nav-link" href="{{route('front.blog')}}">blogs</a>
+                 <a class="nav-link" href="{{route(config('constant.blog'))}}">blogs</a>
               </li>
            </ul>
            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -83,13 +66,7 @@
            </h2>
            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
              <div class="accordion-body">
-               <ul class="list-group border-0 mt-2">
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Social Media Marketing</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Search Engine Optimization (SEO)</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Search Engine Marketing (SEM)</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Google My Business</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Advertisement</li></a>
-                </ul>
+               <x-marketing/>
             </div>
            </div>
          </div>
@@ -100,12 +77,8 @@
              </button>
            </h2>
            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-             <div class="accordion-body">
-               <ul class="list-group border-0 mt-2">
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>E-commerce Development</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Web Development</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>App Development</li></a>
-                </ul> 
+               <div class="accordion-body">
+                 <x-dev/>   
                </div>
            </div>
          </div>
@@ -117,30 +90,28 @@
            </h2>
            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
              <div class="accordion-body">
-               <ul class="list-group border-0 mt-2">
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Logo Design</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Branding & Packaging</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Print Media</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>UI/UX Design</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Digital Banners</li></a>
-                  <a href="#"><li class="list-group-item border-0 px-0 py-0"><i class="bi bi-chevron-right"></i>Motion Graphics</li></a>
-                </ul>            
+                <x-design/>           
             </div>
            </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <a href="https://google.com" class="accordion-button single-btn" type="button">Works</a>
+              <a href="{{route(config('constant.work'))}}" class="accordion-button single-btn" type="button">Works</a>
             </h2>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <a href="https://google.com" class="accordion-button single-btn" type="button">Career</a>
+              <a href="{{route(config('constant.career'))}}" class="accordion-button single-btn" type="button">Career</a>
             </h2>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <a href="https://google.com" class="accordion-button single-btn" type="button">Blogs</a>
+              <a href="{{route(config('constant.blog'))}}" class="accordion-button single-btn" type="button">Blogs</a>
+            </h2>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <a href="https://google.com" class="accordion-button single-btn demo" type="button">Get Started</a>
             </h2>
           </div>
        </div>

@@ -14,7 +14,9 @@ body{
 #client-review{
     height:200px;
 }
-
+.height-content-cus{
+    height:200px !important;
+} 
 .preloader-container .spinner-border{
     vertical-align:inherit;
     width:2rem !important;
@@ -26,6 +28,29 @@ body{
     width:1rem !important;
     height:1rem !important;
 }
+#showimg {
+    width:70% !important;   
+}
+#showimg .btn-close{
+    content:"";
+    position: absolute;
+    top:20px;
+    left:-30px;
+    opacity:1 !important;
+    border-radius: 20px 0px 0px 20px;
+    z-index:-1;
+    color:#000;
+    background:#fff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#showimg .spinner-border{
+    width:2rem !important;
+    height:2rem !important;
+}
+
 /* 
 .dt-bootstrap5 .row:first-child{
     display:none;
