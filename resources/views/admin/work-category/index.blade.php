@@ -12,13 +12,14 @@
                      <th>Action</th>
                  </tr>
                 </thead>
-                 <tbody>                   
+                 <tbody id="sortable">                   
                  </tbody>
             </table>
         </div>             
     </div>
 @push('js')
 <script>  
+  
     const tabledata = new DataTable('#datatable', {
      ajax: '{{route('workcategory.getdata')}}',
      processing: true,
@@ -27,9 +28,35 @@
             { data:'index'},
             { data:'c_name'},    
             { data:'action',"orderable":false},
-      ]     
-    });    
-</script>  
+      ],drawCallback: function(settings) {  
+        console.log(settings.json.data) 
+        $('#datatable').find('tbody tr').attr('role', 'row');          
+        $.each(settings.json.data, function(index, item) {
+            $('#datatable').find('tbody tr').eq(index).attr('data-id',item.id); 
+        });
+      }   
+    });   
+    $( "#sortable" ).sortable({
+        update:function(){
+            changeorder();
+        }         
+    });
+    function changeorder(){
+         var newdataid = [];
+        $('#sortable tr').each(function() {
+          const dataId = $(this).attr('data-id');     
+          newdataid.push(dataId);
+        });
+        $.ajax({
+            url:"{{route('workcategory.order')}}",
+            type:'GET',
+            data:{'id':newdataid},
+            success:function(res){
+                tabledata.draw();
+            }
+        }) 
+    }
+</script> 
 <x-delete href="workcategory.delete"/>
 @endpush   
  </x-adminlayout>

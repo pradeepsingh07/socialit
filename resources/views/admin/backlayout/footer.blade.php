@@ -4,6 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 <script src="{{asset('backhand/js/script.js')}}"></script>  
 @stack('js')
 <x-alert/>

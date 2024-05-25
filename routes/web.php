@@ -95,13 +95,14 @@ Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('fron
         'index', 'create','store','edit','update'
     ]);
 
-
+    Route::get('work-category/order',[WorkcategoryController::class,'order'])->name('workcategory.order');
     Route::get('work-category/delete',[WorkcategoryController::class,'delete'])->name('workcategory.delete');
     Route::get('work-category/getdata',[WorkcategoryController::class,'getdata'])->name('workcategory.getdata');
     Route::resource('work-category',WorkcategoryController::class)->only([
         'index', 'create','store','edit','update'
     ]);
 
+    Route::get('work/remove-img',[WorkController::class,'removeimg'])->name('work.removeimg');
     Route::get('work/delete',[WorkController::class,'delete'])->name('work.delete');
     Route::get('work/getimages',[WorkController::class,'getimages'])->name('work.getimages');
     Route::get('work/getdata',[WorkController::class,'getdata'])->name('work.getdata');

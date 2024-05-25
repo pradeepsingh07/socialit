@@ -3,7 +3,7 @@
         <div>
             <a href="{{route('work.create')}}" class="btn btn-primary f-14"><i class="fas fa-plus"></i> Add Work</a>
         </div>  
-        <div class="card border-0 mt-3 p-3" id="table-card">           
+        <div class="card border-0 mt-3 p-3 table-responsive" id="table-card">           
             <table class="table table-striped table-bordered list-view" id="datatable">
                 <thead>
                  <tr>

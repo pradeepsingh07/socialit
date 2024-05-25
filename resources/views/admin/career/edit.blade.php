@@ -46,17 +46,16 @@
                            @foreach ($data->job_details as $key=>$details) 
                             <div class="input-group my-3 close-row">
                                 <input value="{{$details}}" name="job_details[]" type="text" class="f-14 form-control" aria-describedby="basic-addon1">
-                                <button type="button" class="close input-group-text  closeRow" onclick="closeinput()"id="basic-addon1">X</button>
-                            </div>
+                                <button type="button" class="btn btn-danger closeRow" onclick="closeinput()" id="basic-addon1">X</button>                            </div>
                           @endforeach 
                         </div>
                     </div>   
                     <div class="col-md-3">
-                         <div class="mb-3">   
-                             <label class="form-label invisible "></label>
-                             <button type="button" class="btn btn-primary f-13 w-100" id="addbtn">Add Row</button>
-                         </div>
-                    </div>                               
+                        <div class="mb-3">   
+                            <label class="form-label invisible "></label>
+                            <button type="button" class="btn btn-primary f-13 w-100" id="addbtn">Add Row</button>
+                        </div>
+                   </div>                               
                  </div>
                  <button class="btn btn-primary f-14" id="submitbtn">Update <i class="fas fa-long-arrow-alt-right"></i></button>
               </form>              

@@ -22,7 +22,7 @@ class HomeController extends Controller
         return view('career',compact('datas'));
     }
     public function work(){
-        $datas = WorkcategoryModel::get();
+        $datas = WorkcategoryModel::orderBy('order','ASC')->get();
         $catdatas = WorkModel::with('withdata')->get();
         return view('work',compact('datas','catdatas'));
     }   

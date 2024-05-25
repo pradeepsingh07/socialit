@@ -51,6 +51,31 @@ body{
     height:2rem !important;
 }
 
+#sortable-card{
+    position: relative;   
+    border:0; 
+}
+
+#sortable-card .close{
+    content:"";
+    position: absolute;
+    top:-10px;
+    left:-10px;
+    opacity:1;
+    background:#FFE8C8;
+    width:30px;
+    height:30px;
+    border-radius:50px;
+}
+
+#sortable-card .close i{
+    font-size:14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:600;
+}
+
 /* 
 .dt-bootstrap5 .row:first-child{
     display:none;
