@@ -75,7 +75,10 @@
             success:function(res){
                      if(res.code == 200){
                        window.location.href="{{route('career.index')}}"
-                     }                    
+                     }    
+                     if(res.code == 400) {
+                          showmessage(res.message)
+                     }                 
                      $('#submitbtn').html('Submit <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false);
                      

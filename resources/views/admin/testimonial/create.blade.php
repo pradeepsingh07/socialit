@@ -11,9 +11,11 @@
                 @method('post')
                  <div class="row">
                      <div class="col-md-6">
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label class="form-label">Client Name</label>
                             <input type="text" name="c_name" class="form-control f-14" placeholder="Client Name"/>
+                            <span class="error-message"></span>
+
                         </div>                        
                      </div>
                      <div class="col-md-6">
@@ -60,7 +62,10 @@
                 success:function(res){
                      if(res.code == 200){
                        window.location.href="{{route('testimonial.index')}}"
-                     }                    
+                     }    
+                     if(res.code == 400) {
+                          showmessage(res.message)
+                     }   
                      $('#submitbtn').html('Submit <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false)     
                 }
