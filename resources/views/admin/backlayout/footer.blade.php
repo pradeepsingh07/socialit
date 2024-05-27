@@ -8,20 +8,5 @@
 <script src="{{asset('backhand/js/script.js')}}"></script>  
 @stack('js')
 <x-alert/>
-<script>
- 
-    function showmessage(e){
-        var error_ele = document.getElementsByClassName('err-msg');
-            if (error_ele.length > 0) {
-                for (var i=error_ele.length-1;i>=0;i--){
-                    error_ele[i].remove();
-                }
-            }
-        $.each(e, function(key, value) {
-        var el = $(document).find('[name="'+key + '"]');
-        el.after($('<span class="text-danger badge err-msg">' + value[0] + '</span>'));                    
-        });
-     }
-</script>
 </body>
 </html>

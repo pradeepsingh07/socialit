@@ -11,8 +11,7 @@
                 @method('post')
                  <div class="row">
                     <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Work Category <span class="text-danger">*</span></label>
+                        <x-form labelname="Work Category" name="category">
                             <select name="category" class="form-control f-14">
                                 <option>Select Category</option>
                                 @foreach ($datas as $data)
@@ -21,31 +20,27 @@
                                      @endif
                                 @endforeach
                             </select>
-                        </div>                        
+                        </x-form> 
                      </div> 
                      <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Title <span class="text-danger">*</span></label>
+                         <x-form labelname="Title" name="title">
                             <input type="text" name="title" class="form-control f-14" placeholder="Title (Like Brand Name)"/>                           
-                        </div>                        
+                         </x-form>
                      </div>  
                      <div class="col-md-6">
-                        <div class="mb-3">
-                            <label class="form-label">Thumbnail Image <span class="text-danger">*</span> (Size:1280X1438)</label>
+                         <x-form labelname="Thumbnail Image" name="t_image">
                             <input type="file" class="form-control file" name="t_image"/>
-                        </div>                        
+                         </x-form>             
                      </div> 
                      <div class="col-md-6">
-                        <div class="mb-3">
-                            <label class="form-label">Content (Like About Brand) <span class="text-danger">*</span></label>
-                            <textarea id="content" class=" height-content-cus form-control" name="content"></textarea>
-                        </div>                        
+                         <x-form labelname="Content (Like About Brand)" name="content">
+                            <textarea class="height-content-cus form-control" name="content"></textarea>
+                         </x-form> 
                      </div>
                      <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Work Images (Multipule Upload)<span class="text-danger">*</span></label>
-                            <input type="file" class="form-control" name="workimages[]" id="images" multiple/>
-                        </div>
+                        <x-form labelname="Work Images (Multipule Upload)" name="workimages">
+                            <input type="file" class="form-control" name="workimages[]" id="images" multiple required/>
+                        </x-form>
                         <div class="mb-3">
                             <div class="row g-4" id="imagePreview"></div>
                         </div>
@@ -61,6 +56,7 @@
 <script>
     $('#submitform').on('submit',function(e){
         e.preventDefault();
+        $('.validation-error').empty();
         $('#submitbtn').html('<div class="spinner-border" role="status"></div> Loading...');
         $('#submitbtn').attr('disabled',true)
         const formdata = new FormData(this);
@@ -73,7 +69,12 @@
             success:function(res){
                      if(res.code == 200){
                        window.location.href="{{route('work.index')}}"
-                     }                    
+                     }  
+                     if(res.code == 400){                  
+                       $.each(res.message, function(key, value) {
+                            $(`#${key}`).html(value); 
+                        });
+                     }
                      $('#submitbtn').html('Submit <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false)     
                 }

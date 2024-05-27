@@ -57,7 +57,7 @@ class TestimonialController extends Controller
             $validation = validator::make($request->all(),[
                  'c_name'=>'required | string',
                  'c_rating'=>'required',
-                 'c_image'=>'required',
+                 'c_image'=>'required | max:1024 | mimes:webp',
                  'c_review'=>'required'
              ]);
 

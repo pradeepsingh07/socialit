@@ -11,33 +11,29 @@
                 @method('put')
                  <div class="row">
                     <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Blog Category</label>
-                            <select name="category" class="form-control f-14">
-                                <option>Select Category</option>
-                                @foreach ($cates as $cate)
-                                     <option {{$cate->id ==  $data->c_id ? 'selected' : ''}} value="{{$cate->id}}">{{$cate->category_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>                        
+                         <x-form labelname="Blog Category" name="category">
+                          <select name="category" class="form-control f-14">
+                          <option value="">Select Category</option>
+                           @foreach ($cates as $cate)
+                            <option {{$cate->id ==  $data->c_id ? 'selected' : ''}} value="{{$cate->id}}">{{$cate->category_name}}</option>
+                           @endforeach
+                         </select>
+                       </x-form>                       
                      </div> 
-                     <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Blog Title</label>
-                            <input value="{{$data->title}}" type="text" name="title" class="form-control f-14" placeholder="Category Name"/>
-                        </div>                        
+                     <div class="col-md-12">                      
+                        <x-form labelname="Blog Title" name="title">
+                          <input value="{{$data->title}}" type="text" name="title" class="form-control f-14" placeholder="Category Name"/>
+                        </x-form>                        
                      </div>  
                      <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Thumbnail Image</label>
-                            <input data-default-file="{{asset('storage/upload/'.$data->thumbnail_image)}}" type="file" class="form-control file" name="t_image"/>
-                        </div>                        
+                        <x-form labelname="Thumbnail Image" name="t_image">
+                          <input data-default-file="{{asset('storage/upload/'.$data->thumbnail_image)}}" type="file" class="form-control file" name="t_image"/>
+                        </x-form>                        
                      </div> 
-                     <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Content</label>
-                            <textarea id="content" class="form-control" name="content">{!! $data->content !!}</textarea>
-                        </div>                        
+                     <div class="col-md-12">                   
+                        <x-form labelname="Content" name="content">
+                          <textarea id="content-area" class="form-control" name="content">{!! $data->content !!}</textarea>
+                        </x-form>                       
                      </div>                      
                  </div>
                  <button class="btn btn-primary f-14" id="submitbtn">Update <i class="fas fa-long-arrow-alt-right"></i></button>
@@ -50,6 +46,7 @@
 <script>
     $('#submitform').on('submit',function(e){
         e.preventDefault();
+        $('.validation-error').empty();
         $('#submitbtn').html('<div class="spinner-border" role="status"></div> Loading...');
         $('#submitbtn').attr('disabled',true)
         const formdata = new FormData(this);
@@ -62,13 +59,18 @@
             success:function(res){
                      if(res.code == 200){
                        window.location.href="{{route('blog.index')}}"
-                     }                    
+                     } 
+                     if(res.code == 400){
+                      $.each(res.message, function(key, value) {
+                            $(`#${key}`).html(value); 
+                        });
+                     }                   
                      $('#submitbtn').html('Update <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false)     
                 }
             }) 
     }); 
-     $('#content').summernote({  
+     $('#content-area').summernote({  
             fontNames: ['Poppins', 'Arial Black', 'Comic Sans MS', 'Courier New'],         
             callbacks: {
             onImageUpload: function(files, editor, welEditable) {
@@ -91,7 +93,7 @@
       contentType: false,
       processData: false,
       success: function(res) {
-        $('#content').summernote('insertImage', res.url);
+        $('#content-area').summernote('insertImage', res.url);
       }
     });
   }
@@ -107,7 +109,7 @@
       contentType: false,
       processData: false,
       success: function(res) {
-        $('#content').summernote('insertImage', res.url);
+        $('#content-area').summernote('insertImage', res.url);
       }
     });
   }

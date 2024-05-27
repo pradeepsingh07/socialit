@@ -78,7 +78,7 @@ class BlogController extends Controller
         }
      }
      public function store(Request $request){
-        if($request->ajax()){    
+         if($request->ajax()){    
             $validation = Validator::make($request->all(),[
                 'category'=>'required | numeric',   
                 'title'=>'required | string',  
@@ -106,7 +106,7 @@ class BlogController extends Controller
                     'code'=>'200'
                 ]);
             }
-        }
+         }
      }
      public function edit(string $id){  
         $cates = BlogcategoryModel::get();

@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\backcontroller;
-
 use App\Http\Controllers\Controller;
 use App\Models\CareerModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Rules\jobarray;
 
 
 class CareerController extends Controller
@@ -70,7 +70,7 @@ class CareerController extends Controller
                 'title'=>'required | string',   
                 'd_name'=>'required | string',  
                 'job_type'=>'required | string',
-                'work_from_type'=>'required | string', 
+                'work_from_type'=>'required | string',
             ]);
 
             if($validation->fails()){

@@ -123,7 +123,7 @@ class WorkController extends Controller
                 $workImages[] = $imageFilename;
              }
            }
-
+           
          $work_images_files = array_merge($request->image_data, $workImages); 
          if($request->ajax()){    
             $validation = Validator::make($request->all(),[
@@ -149,7 +149,6 @@ class WorkController extends Controller
                         Storage::delete('public/upload/work/' . $work->thumbnail_image);
                      }
                  }
-
                 $work->update([
                     'c_id' => $request->category,
                     'title' => $request->title,

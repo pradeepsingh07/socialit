@@ -11,34 +11,28 @@
                 @method('post')
                  <div class="row">
                      <div class="col-md-6">
-                        <div class="mb-3 form-group">
-                            <label class="form-label">Client Name</label>
+                         <x-form labelname="Client Name" name="c_name">
                             <input type="text" name="c_name" class="form-control f-14" placeholder="Client Name"/>
-                            <span class="error-message"></span>
-
-                        </div>                        
+                         </x-form>                       
                      </div>
                      <div class="col-md-6">
-                        <div class="mb-3">
-                            <label class="form-label">Client Rating</label>
-                            <select class="form-control f-14" name="c_rating">                      
-                              <option value="1">4</option>
-                              <option value="1">4.5</option>
-                              <option value="1">5</option>
-                            </select> 
-                        </div>                               
+                        <x-form labelname="Client Rating" name="c_rating">
+                             <select class="form-control f-14" name="c_rating">                      
+                                <option value="1">4</option>
+                                <option value="1">4.5</option>
+                                <option value="1">5</option>
+                             </select> 
+                        </x-form>                               
                     </div>
                     <div class="col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Client Image</label>
+                         <x-form labelname="Client Image" name="c_image">
                             <input data-default-file="" value="" type="file" name="c_image" class="file"/>
-                          </div>                      
+                         </x-form>                                               
                     </div>
                     <div class="col-md-6">
-                         <div class="mb-3">
-                            <label class="form-label">Client Review</label>
+                          <x-form labelname="Client Review" name="c_review">
                             <textarea name="c_review" placeholder="Client Message here" class="form-control f-14" id="client-review"></textarea>
-                         </div>
+                          </x-form> 
                     </div>               
                  </div>
                  <button class="btn btn-primary f-14" id="submitbtn">Submit <i class="fas fa-long-arrow-alt-right"></i></button>
@@ -50,6 +44,7 @@
      <script>
         $('#submitform').on('submit',function(e){
             e.preventDefault();
+            $('.validation-error').empty();
             $('#submitbtn').html('<div class="spinner-border" role="status"></div> Loading...');
             $('#submitbtn').attr('disabled',true)
             const formdata = new FormData(this);
@@ -64,7 +59,9 @@
                        window.location.href="{{route('testimonial.index')}}"
                      }    
                      if(res.code == 400) {
-                          showmessage(res.message)
+                         $.each(res.message, function(key, value) {
+                             $(`#${key}`).html(value); 
+                         });
                      }   
                      $('#submitbtn').html('Submit <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false)     

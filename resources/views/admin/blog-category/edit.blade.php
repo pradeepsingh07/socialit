@@ -10,11 +10,10 @@
                 @csrf
                 @method('put')
                  <div class="row">
-                     <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Category Name</label>
+                     <div class="col-md-12">                       
+                        <x-form labelname="Category Name" name="c_name">
                             <input value="{{$data->category_name}}" type="text" name="c_name" class="form-control f-14" placeholder="Category Name"/>
-                        </div>                        
+                         </x-form>                      
                      </div>                        
                  </div>
                  <button class="btn btn-primary f-14" id="submitbtn">Update <i class="fas fa-long-arrow-alt-right"></i></button>
@@ -26,6 +25,7 @@
 <script>
     $('#submitform').on('submit',function(e){
         e.preventDefault();
+        $('.validation-error').empty();
         $('#submitbtn').html('<div class="spinner-border" role="status"></div> Loading...');
         $('#submitbtn').attr('disabled',true)
         const formdata = new FormData(this);
@@ -38,7 +38,12 @@
             success:function(res){
                      if(res.code == 200){
                        window.location.href="{{route('blog-category.index')}}"
-                     }                    
+                     }   
+                     if(res.code == 400){
+                        $.each(res.message, function(key, value) {
+                                $(`#${key}`).html(value); 
+                            });
+                     }                 
                      $('#submitbtn').html('Update <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false)     
                 }

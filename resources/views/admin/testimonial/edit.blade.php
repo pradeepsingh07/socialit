@@ -11,32 +11,28 @@
                 @method('put')
                  <div class="row">
                      <div class="col-md-6">
-                        <div class="mb-3">
-                            <label class="form-label">Client Name</label>
+                        <x-form labelname="Client Name" name="c_name">
                             <input value="{{$data->name}}" type="text" name="c_name" class="form-control f-14" placeholder="Client Name"/>
-                        </div>                        
+                         </x-form>  
                      </div>
-                     <div class="col-md-6">
-                        <div class="mb-3">
-                            <label class="form-label">Client Rating</label>
-                            <select class="form-control f-14" name="c_rating">                      
-                              <option {{$data->rating == '4' ? 'selected' : ''}} value="4">4</option>
-                              <option {{$data->rating == '4.5' ? 'selected' : ''}} value="4.5">4.5</option>
-                              <option {{$data->rating == '5' ? 'selected' : ''}} value="5">5</option>
-                            </select> 
-                        </div>                               
+                     <div class="col-md-6">                         
+                        <x-form labelname="Client Rating" name="c_rating">
+                             <select class="form-control f-14" name="c_rating">                      
+                                <option {{$data->rating == '4' ? 'selected' : ''}} value="4">4</option>
+                                <option {{$data->rating == '4.5' ? 'selected' : ''}} value="4.5">4.5</option>
+                                <option {{$data->rating == '5' ? 'selected' : ''}} value="5">5</option>
+                              </select> 
+                       </x-form>                             
+                    </div>
+                    <div class="col-md-6">                          
+                        <x-form labelname="Client Image" name="c_image">
+                          <input data-default-file="{{asset('storage/upload/'.$data->image)}}" type="file" name="c_image" class="file"/>
+                        </x-form> 
                     </div>
                     <div class="col-md-6">
-                          <div class="mb-3">
-                            <label class="form-label">Client Image</label>
-                            <input data-default-file="{{asset('storage/upload/'.$data->image)}}" type="file" name="c_image" class="file"/>
-                          </div>                      
-                    </div>
-                    <div class="col-md-6">
-                         <div class="mb-3">
-                            <label class="form-label">Client Review</label>
-                            <textarea name="c_review" placeholder="Client Message here" class="form-control f-14" id="client-review">{{$data->review}}</textarea>
-                         </div>
+                        <x-form labelname="Client Review" name="c_review">
+                        <textarea name="c_review" placeholder="Client Message here" class="form-control f-14" id="client-review">{{$data->review}}</textarea>
+                        </x-form>
                     </div>               
                  </div>
                  <button class="btn btn-primary f-14" id="submitbtn">Update <i class="fas fa-long-arrow-alt-right"></i></button>
@@ -48,6 +44,7 @@
      <script>
         $('#submitform').on('submit',function(e){
             e.preventDefault();
+            $('.validation-error').empty();
             $('#submitbtn').html('<div class="spinner-border" role="status"></div> Loading...');
             $('#submitbtn').attr('disabled',true)
             const formdata = new FormData(this);
@@ -60,7 +57,12 @@
                 success:function(res){
                      if(res.code == 200){
                        window.location.href="{{route('testimonial.index')}}"
-                     }                    
+                     }    
+                     if(res.code == 400) {
+                        $.each(res.message, function(key, value) {
+                             $(`#${key}`).html(value); 
+                         });
+                     }                 
                      $('#submitbtn').html('Update <i class="fas fa-long-arrow-alt-right"></i>');
                      $('#submitbtn').attr('disabled',false)     
                 }
