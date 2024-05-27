@@ -37,7 +37,7 @@
             <x-sidebarmenu title="Contacts" icon='address-book' href="{{route('contact.index')}}" innertitle="All Contacts"/>
             <x-sidebarmenu title="Newsletter" icon='newspaper' href="" innertitle="All Newsletter"/>
             <li class="accordionItem closeIt">
-               <a class="text-decoration-none nav-item text-lightest f-15 sidebar-text-color" title="Logout">
+               <a href="{{route('back.logout')}}" class="text-decoration-none nav-item text-lightest f-15 sidebar-text-color" title="Logout">
                   <i class="fas fa-power-off"></i>
                    <span class="ps-3">Logout</span>                     
                </a>

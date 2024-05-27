@@ -18,7 +18,7 @@
             </div>
             <div class="col-2 col-md-4">
               <div class="page-header-right float-end d-flex align-items-center justify-content-end">
-                 <a href=""><i class="fas fa-power-off"></i></a>
+                 <a href="{{route('back.logout')}}"><i class="fas fa-power-off"></i></a>
                </div>
             </div>
         </div> 

@@ -57,60 +57,66 @@ Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('fron
 // ===============================================================
 
 
- Route::group(['prefix'=>'admin'],function(){
+ Route::group(['prefix'=>'admin','middleware'=>'PreventBack'],function(){
 
     Route::get('/',[AuthController::class,'index'])->name('back.auth');
-    Route::get('dashboard',[DashboardController::class,'index'])->name('back.dashboard');
-    Route::get('testimonial/getdata',[TestimonialController::class,'getdata'])->name('testimonial.getdata');
-    Route::get('testimonial/status',[TestimonialController::class,'status'])->name('testimonial.status');
-    Route::get('testimonial/delete',[TestimonialController::class,'delete'])->name('testimonial.delete');
-    Route::resource('testimonial',TestimonialController::class)->only([
-        'index', 'create','store','edit','update'
-    ]);
-    Route::get('career/getdata',[CareerController::class,'getdata'])->name('career.getdata');
-    Route::get('career/delete',[CareerController::class,'delete'])->name('career.delete');
-    Route::get('career/status',[CareerController::class,'status'])->name('career.status');
-    Route::resource('career',CareerController::class)->only([
-        'index', 'create','store','edit','update'
-    ]);
-    Route::get('job-resume',[JobResumeController::class,'index'])->name('jobresume.index');
-    Route::get('job-resume/getdata',[JobResumeController::class,'getdata'])->name('jobresume.getdata');
-    Route::get('job-resume/delete',[JobResumeController::class,'delete'])->name('jobresume.delete');
+    Route::post('/emailverify',[AuthController::class,'emailauth'])->name('back.emailauth');
+    Route::post('/otpverify',[AuthController::class,'otpverify'])->name('back.otpverify');
 
-    Route::get('contact',[ContactController::class,'index'])->name('contact.index');
-    Route::get('contact/getdata',[ContactController::class,'getdata'])->name('contact.getdata');
-    Route::get('contact/delete',[ContactController::class,'delete'])->name('contact.delete');
+    Route::group(['middleware'=>'AuthCheck'],function(){
 
-    Route::get('blog-category/delete',[BlogcategoryController::class,'delete'])->name('blogcategory.delete');
-    Route::get('blog-category/getdata',[BlogcategoryController::class,'getdata'])->name('blogcategory.getdata');
-    Route::resource('blog-category',BlogcategoryController::class)->only([
-        'index', 'create','store','edit','update'
-    ]);
+        Route::get('/logout',[AuthController::class,'logout'])->name('back.logout');
+        Route::get('dashboard',[DashboardController::class,'index'])->name('back.dashboard');
+        Route::get('testimonial/getdata',[TestimonialController::class,'getdata'])->name('testimonial.getdata');
+        Route::get('testimonial/status',[TestimonialController::class,'status'])->name('testimonial.status');
+        Route::get('testimonial/delete',[TestimonialController::class,'delete'])->name('testimonial.delete');
+        Route::resource('testimonial',TestimonialController::class)->only([
+            'index', 'create','store','edit','update'
+        ]);
+        Route::get('career/getdata',[CareerController::class,'getdata'])->name('career.getdata');
+        Route::get('career/delete',[CareerController::class,'delete'])->name('career.delete');
+        Route::get('career/status',[CareerController::class,'status'])->name('career.status');
+        Route::resource('career',CareerController::class)->only([
+            'index', 'create','store','edit','update'
+        ]);
+        Route::get('job-resume',[JobResumeController::class,'index'])->name('jobresume.index');
+        Route::get('job-resume/getdata',[JobResumeController::class,'getdata'])->name('jobresume.getdata');
+        Route::get('job-resume/delete',[JobResumeController::class,'delete'])->name('jobresume.delete');
+    
+        Route::get('contact',[ContactController::class,'index'])->name('contact.index');
+        Route::get('contact/getdata',[ContactController::class,'getdata'])->name('contact.getdata');
+        Route::get('contact/delete',[ContactController::class,'delete'])->name('contact.delete');
+    
+        Route::get('blog-category/delete',[BlogcategoryController::class,'delete'])->name('blogcategory.delete');
+        Route::get('blog-category/getdata',[BlogcategoryController::class,'getdata'])->name('blogcategory.getdata');
+        Route::resource('blog-category',BlogcategoryController::class)->only([
+            'index', 'create','store','edit','update'
+        ]);
+    
+        Route::get('blog/delete',[BlogController::class,'delete'])->name('blog.delete');
+        Route::get('blog/getdata',[BlogController::class,'getdata'])->name('blog.getdata');
+        Route::post('blog/upload',[BlogController::class,'uploadimage'])->name('blog.upload.image');
+        Route::post('blog/delete-image',[BlogController::class,'deleteimg'])->name('blog.delete.image');
+        Route::resource('blog',BlogController::class)->only([
+            'index', 'create','store','edit','update'
+        ]);
+    
+        Route::get('work-category/order',[WorkcategoryController::class,'order'])->name('workcategory.order');
+        Route::get('work-category/delete',[WorkcategoryController::class,'delete'])->name('workcategory.delete');
+        Route::get('work-category/getdata',[WorkcategoryController::class,'getdata'])->name('workcategory.getdata');
+        Route::resource('work-category',WorkcategoryController::class)->only([
+            'index', 'create','store','edit','update'
+        ]);
+    
+        Route::get('work/remove-img',[WorkController::class,'removeimg'])->name('work.removeimg');
+        Route::get('work/delete',[WorkController::class,'delete'])->name('work.delete');
+        Route::get('work/getimages',[WorkController::class,'getimages'])->name('work.getimages');
+        Route::get('work/getdata',[WorkController::class,'getdata'])->name('work.getdata');
+        Route::resource('work',WorkController::class)->only([
+            'index', 'create','store','edit','update'
+        ]);
 
-    Route::get('blog/delete',[BlogController::class,'delete'])->name('blog.delete');
-    Route::get('blog/getdata',[BlogController::class,'getdata'])->name('blog.getdata');
-    Route::post('blog/upload',[BlogController::class,'uploadimage'])->name('blog.upload.image');
-    Route::post('blog/delete-image',[BlogController::class,'deleteimg'])->name('blog.delete.image');
-    Route::resource('blog',BlogController::class)->only([
-        'index', 'create','store','edit','update'
-    ]);
-
-    Route::get('work-category/order',[WorkcategoryController::class,'order'])->name('workcategory.order');
-    Route::get('work-category/delete',[WorkcategoryController::class,'delete'])->name('workcategory.delete');
-    Route::get('work-category/getdata',[WorkcategoryController::class,'getdata'])->name('workcategory.getdata');
-    Route::resource('work-category',WorkcategoryController::class)->only([
-        'index', 'create','store','edit','update'
-    ]);
-
-    Route::get('work/remove-img',[WorkController::class,'removeimg'])->name('work.removeimg');
-    Route::get('work/delete',[WorkController::class,'delete'])->name('work.delete');
-    Route::get('work/getimages',[WorkController::class,'getimages'])->name('work.getimages');
-    Route::get('work/getdata',[WorkController::class,'getdata'])->name('work.getdata');
-    Route::resource('work',WorkController::class)->only([
-        'index', 'create','store','edit','update'
-    ]);
-
-
+    });
  
 });
 

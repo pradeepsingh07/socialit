@@ -7,10 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Rules\jobarray;
 
-
 class CareerController extends Controller
-{
-   
+{   
     public function index(){
         return view('admin/career/index');
     }
@@ -22,8 +20,11 @@ class CareerController extends Controller
             $searcharr = $request->get('search');
             $search =  $searcharr['value'];         
             $recordsTotal = CareerModel::count();   
-            $filterData = CareerModel::count();  
-            $datas = CareerModel::limit($length)->offset($start)->orderby('id','DESC')->get();
+            $filterData = CareerModel::search($search)->count();  
+            $datas = CareerModel::search($search)
+            ->limit($length)
+            ->offset($start)
+            ->orderby('id','DESC')->get();
             $jsondata=[];
             foreach($datas as $key=>$data){ 
 

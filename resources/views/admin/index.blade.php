@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Login</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+@extends('admin.backlayout.mainlayout')
+@section('section')
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     :root{
         --primarybgColor:#F2F4F7;
     }
@@ -13,7 +9,9 @@
         height: 100%;
         background:var(--primarybgColor);
     }
-
+    body{
+        font-family: "Poppins", sans-serif;
+    }
     .container {
         display: flex;
         justify-content: center;
@@ -24,30 +22,85 @@
         width: 350px;
         margin: auto;
     }
-</style>
-</head>
-<body>
+    .colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+    }
+    .colored-toast .swal2-title {
+  color: white;
+}
 
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title text-center">Login</h2>
-                <form>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="d-grid gap-2">
-                      <button type="submit" class="btn btn-primary btn-block">Login</button>
-                    </div>
-                </form>
-            </div>
+.colored-toast .swal2-close {
+  color: white;
+}
+
+.colored-toast .swal2-html-container {
+  color: white;
+}
+</style>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="text-center mb-3">Login</h2>
+            <form id="formsubmit">
+                @csrf
+                @method('post')
+                @if(session('otp') != 1 )
+                <div class="mb-3">
+                    <input type="text" name="email" class="form-control" placeholder="Enter Your Email">
+                     <div class="text-danger badge" id="error_email"></div>
+                </div>  
+                @else 
+                <div class="mb-3">
+                    <input type="hidden" value="{{session('email')}}" name="re_email"/>
+                    <input type="text" maxlength="6" inputmode="numeric" name="otp" class="form-control" placeholder="Enter Your OTP">
+                     <div class="text-danger badge" id="error_otp"></div>
+                </div>  
+                @endif             
+                <div class="d-grid gap-2">
+                    @if(session('otp') != 1 )
+                     <button type="submit" class="btn btn-primary btn-block" id="btn">Request OTP</button>
+                     @else 
+                     <button type="submit" class="btn btn-primary btn-block otp" id="btn">Login</button>
+                    @endif 
+                </div>
+            </form>
         </div>
     </div>
+</div>
+@endsection
+@push('js')
+ <script>
+    $('#formsubmit').on('submit',function(e){
+        e.preventDefault();
+        $('#btn').html('Loading...');
+        $('#btn').attr('disabled',true);
+        $.ajax({
+            url:"{{session('otp') != 1 ? route('back.emailauth') : route('back.otpverify') }}",
+            type:'POST',
+            data:$('#formsubmit').serialize(),
+            success:function(res){
+                $('#btn').html('Request OTP');
+                $('.otp').html('Login');
+                $('#btn').attr('disabled',false);
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+                if(res.code == 400){
+                    $('#error_email').html(res.errors.email);   
+                    $('#error_otp').html(res.errors.otp);                 
+                }
+                if(res.code == 404){
+                    $('#error_email').html(res.message);
+                    $('#error_otp').html(res.message)
+                }
+                if(res.code == 200){
+                      location.reload();    
+                }
+                if(res.code == 200 && res.status == true){
+                     window.location.href = "{{route('back.dashboard')}}";  
+                }
+            }       
+        });        
+    });
+</script>
+<x-alert/>
+@endpush
+@php session()->forget('otp'); @endphp

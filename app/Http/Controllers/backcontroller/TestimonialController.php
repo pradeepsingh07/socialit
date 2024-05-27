@@ -24,8 +24,12 @@ class TestimonialController extends Controller
             $searcharr = $request->get('search');
             $search =  $searcharr['value'];         
             $recordsTotal = TestimonialModel::count();   
-            $filterData = TestimonialModel::count();  
-            $datas = TestimonialModel::limit($length)->offset($start)->get();
+            $filterData = TestimonialModel::when($search,function($query,$search){
+                $query->where('name','like','%'.$search.'%');
+            })->count();  
+            $datas = TestimonialModel::when($search,function($query,$search){
+                  $query->where('name','like','%'.$search.'%');
+            })->limit($length)->offset($start)->get();
             $jsondata=[];
             foreach($datas as $key=>$data){                
                 $jsondata[]=array(
@@ -119,13 +123,12 @@ class TestimonialController extends Controller
                     'message'=>$validation->errors()
                 ]);
              }else{ 
+                $data=TestimonialModel::select('image')->where('id',$id)->first();
                 if($request->c_image != ""){
                   $filename = 'review'.rand(100000,999999).'.'.$request->file("c_image")->getClientOriginalExtension();
                   $request->file("c_image")->storeAs("public/upload",$filename);
                 }
-                $data=TestimonialModel::select('image')->where('id',$id)->first();
                 $image = $request->c_image == "" ? $data->image : $filename;
-                
                 if($request->c_image != ""){
                    Storage::delete("public/upload/".$data->image);
                 }
