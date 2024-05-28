@@ -2,40 +2,7 @@
 @section('section')
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    :root{
-        --primarybgColor:#F2F4F7;
-    }
-    body,html{
-        height: 100%;
-        background:var(--primarybgColor);
-    }
-    body{
-        font-family: "Poppins", sans-serif;
-    }
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-    .card {
-        width: 350px;
-        margin: auto;
-    }
-    .colored-toast.swal2-icon-success {
-    background-color: #a5dc86 !important;
-    }
-    .colored-toast .swal2-title {
-  color: white;
-}
-
-.colored-toast .swal2-close {
-  color: white;
-}
-
-.colored-toast .swal2-html-container {
-  color: white;
-}
+    :root{--primarybgColor:#F2F4F7}body,html{height:100%;background:var(--primarybgColor)}body{font-family:Poppins,sans-serif}.container{display:flex;justify-content:center;align-items:center;height:100%}.card{width:350px;margin:auto}.colored-toast.swal2-icon-success{background-color:#a5dc86!important}.colored-toast .swal2-close,.colored-toast .swal2-html-container,.colored-toast .swal2-title{color:#fff}
 </style>
 <div class="container">
     <div class="card">
@@ -70,36 +37,7 @@
 @endsection
 @push('js')
  <script>
-    $('#formsubmit').on('submit',function(e){
-        e.preventDefault();
-        $('#btn').html('Loading...');
-        $('#btn').attr('disabled',true);
-        $.ajax({
-            url:"{{session('otp') != 1 ? route('back.emailauth') : route('back.otpverify') }}",
-            type:'POST',
-            data:$('#formsubmit').serialize(),
-            success:function(res){
-                $('#btn').html('Request OTP');
-                $('.otp').html('Login');
-                $('#btn').attr('disabled',false);
-
-                if(res.code == 400){
-                    $('#error_email').html(res.errors.email);   
-                    $('#error_otp').html(res.errors.otp);                 
-                }
-                if(res.code == 404){
-                    $('#error_email').html(res.message);
-                    $('#error_otp').html(res.message)
-                }
-                if(res.code == 200){
-                      location.reload();    
-                }
-                if(res.code == 200 && res.status == true){
-                     window.location.href = "{{route('back.dashboard')}}";  
-                }
-            }       
-        });        
-    });
+  $("#formsubmit").on("submit",function(t){t.preventDefault(),$("#btn").html("Loading..."),$("#btn").attr("disabled",!0),$.ajax({url:"{{session('otp') != 1 ? route('back.emailauth') : route('back.otpverify') }}",type:"POST",data:$("#formsubmit").serialize(),success:function(t){$("#btn").html("Request OTP"),$(".otp").html("Login"),$("#btn").attr("disabled",!1),400==t.code&&($("#error_email").html(t.errors.email),$("#error_otp").html(t.errors.otp)),404==t.code&&($("#error_email").html(t.message),$("#error_otp").html(t.message)),200==t.code&&location.reload(),200==t.code&&!0==t.status&&(window.location.href="{{route('back.dashboard')}}")}})});
 </script>
 <x-alert/>
 @endpush

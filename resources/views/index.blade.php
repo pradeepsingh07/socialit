@@ -18,14 +18,13 @@
      <p class="para-font">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus nobis quasi exercitationem quibusdam ipsum quos autem repudiandae temporibus aspernatur ea?</p> 
      <div class="container-fluid res-container">
            <div class="row service-card-group mx-md-5 mx-lg-5 g-4"> 
-               <x-servicecard href="#" title='web development' image="images/service/web.webp"/>
-               <x-servicecard href="#" title="digital marketing" image="images/service/dm.webp"/> 
-               <x-servicecard href="#" title="social media marketing" image="images/service/smm.webp"/>  
-               <x-servicecard href="#" title="app development" image="images/service/app.webp"/>  
-               <x-servicecard href="#" title="ui/ux design" image="images/service/uiux.webp"/>  
-               <x-servicecard href="#" title="graphic design" image="images/service/gd.webp"/>
-               <x-servicecard href="#" title="search engine optimization" image="images/service/seo.webp"/>
-               <x-servicecard href="#" title="branding & advertising" image="images/service/branding.webp"/>
+               <x-servicecard href="#" title='development' image="images/service/web.webp"/>
+               <x-servicecard href="#" title="marketing" image="images/service/dm.webp"/> 
+               <x-servicecard href="#" title="design" image="images/service/smm.webp"/>  
+               <x-servicecard href="#" title="app development" image="images/service/app.webp"/> 
+               <div class="text-center">
+                     <a href="" class="btn btn-outline-primary">View All Services <i class="bi bi-arrow-right"></i></a>
+               </div>
            </div>
      </div>
 </section>

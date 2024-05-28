@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-md-6">
                          <x-form labelname="Client Image" name="c_image">
-                            <input data-default-file="" value="" type="file" name="c_image" class="file"/>
+                            <input accept="image/webp" data-default-file="" value="" type="file" name="c_image" class="file"/>
                          </x-form>                                               
                     </div>
                     <div class="col-md-6">

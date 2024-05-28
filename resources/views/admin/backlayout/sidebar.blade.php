@@ -1,14 +1,14 @@
 <aside class="sidebar-dark">
     <div class="mobile-close-sidebar-panel w-100 h-100" onclick="closeMobileMenu()" id="mobile_close_panel"></div>
     <div class="main-sidebar" id="mobile_menu_collapse">
-       <div class="sidebar-brand-box dropdown cursor-pointer ">
+       <div class="sidebar-brand-box dropdown cursor-pointer">
           <div class="dropdown-toggle sidebar-brand d-flex align-items-center justify-content-between  w-100" type="link" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <div class="sidebar-brand-name">
-                <h1 class="mb-0 f-16 f-w-500 text-white-shade mt-0" data-placement="bottom" data-toggle="tooltip" data-original-title="">Social IT
+                <h1 class="mb-0 f-16 f-w-500 text-white-shade mt-0">Social IT
                    <i class="icon-arrow-down icons pl-2"></i>
                 </h1>
                 <div class="mb-0">
-                   <p class="f-13 text-lightest mb-0" data-placement="bottom" data-toggle="tooltip" data-original-title="Mr. Fletcher Berge">Mr. Admin</p>
+                   <p class="f-13 text-lightest mb-0" data-original-title="Login User Name">{{ucwords(Auth::guard('admin_login')->user()->name)}}</p>
                 </div>
              </div>                 
           </div>

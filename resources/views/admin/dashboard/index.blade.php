@@ -8,11 +8,15 @@
    </div>
    <div class="content-wrapper">
       <div class="container-fluid">
-          <div class="row">        
+          <div class="row g-4">        
             <x-dashboardcard name="Testimonial" icon="star" href="{{route('testimonial.index')}}" count="{{$testimonial}}"/>
             <x-dashboardcard name="Career" icon="graduation-cap" href="{{route('career.index')}}" count="{{$career}}"/>
-            <x-dashboardcard name="Contact" icon="phone-alt" href="{{route('contact.index')}}" count="{{$contact}}"/>
+            <x-dashboardcard name="Blog Category" icon="book" href="{{route('blog-category.index')}}" count="{{$b_cat}}"/>
+            <x-dashboardcard name="Blog" icon="book" href="{{route('blog.index')}}" count="{{$blog}}"/>
+            <x-dashboardcard name="Work Category" icon="box" href="{{route('work-category.index')}}" count="{{$w_cat}}"/>
+            <x-dashboardcard name="Work" icon="box" href="{{route('work.index')}}" count="{{$work}}"/>
             <x-dashboardcard name="Resume" icon="graduation-cap" href="{{route('jobresume.index')}}" count="{{$resume}}"/>
+            <x-dashboardcard name="Contact" icon="phone-alt" href="{{route('contact.index')}}" count="{{$contact}}"/>
           </div>
       </div> 
    </div>
