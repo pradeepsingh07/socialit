@@ -114,7 +114,7 @@ class WorkController extends Controller
 
    
      public function update(Request $request, string $id){
-
+       
          $workImages = [];
             if($request->workimages != ""){
              foreach ($request->workimages as $image) {
@@ -123,8 +123,16 @@ class WorkController extends Controller
                 $workImages[] = $imageFilename;
              }
            }
-           
-         $work_images_files = array_merge($request->image_data, $workImages); 
+           if(!empty($workImages) && !empty($request->image_data)){
+              $work_images_files= array_merge($request->image_data, $workImages);
+           }elseif(!empty($workImages)){
+              $work_images_files= $workImages;
+           }elseif(!empty($request->image_data)){
+             $work_images_files= $request->image_data;
+            }else{
+                $work_images_files=[];
+            }
+                
          if($request->ajax()){    
             $validation = Validator::make($request->all(),[
                 'category'=>'required | numeric',   

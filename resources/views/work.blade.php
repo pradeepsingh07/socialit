@@ -33,7 +33,7 @@
                                <div class="col-md-3">
                                    <a href="{{ route('front.workurl', ['workurl' => $catdata->slug]) }}">
                                        <div class="card">
-                                           <img src="{{ asset('storage/upload/work/' . $catdata->thumbnail_image) }}" class="img-fluid" alt=""/>
+                                           <img src="{{asset('storage/upload/work/' . $catdata->thumbnail_image) }}" class="img-fluid" alt=""/>
                                            <div class="readmore"><img src="{{ asset('images/right.png') }}" class="img-fluid"/></div>
                                        </div>
                                    </a>

@@ -47,13 +47,15 @@
                      </div> 
                      <div class="col-md-12 my-5">
                         <div class="row">
-                         <ul id="sortable" class=" d-flex gap-3">                    
+                         <ul id="sortable" class=" d-flex gap-3">  
+                            @if(!empty($workdata->work_images))
                             @foreach($workdata->work_images as $img)
                               <div class="card w-25" id="sortable-card">
                                  <img data-src="{{$img}}" src="{{asset('storage/upload/work/'.$img)}}" class="img-fluid"/>
                                  <button type="button" class="close"><i class="bi bi-x-lg"></i></button>
                               </div>
-                            @endforeach
+                            @endforeach              
+                            @endif
                          </ul>
                     </div>
                      </div>                     
@@ -66,7 +68,7 @@
 @push('js')
 <script>
     $('#submitform').on('submit',function(e){
-        e.preventDefault();
+        e.preventDefault();       
         $('.validation-error').empty();
         $('#submitbtn').html('<div class="spinner-border" role="status"></div> Loading...');
         $('#submitbtn').attr('disabled',true)
@@ -126,9 +128,8 @@ $( function() {
             success:function(res){
                   
             }
-
         }) 
-  });
+   });
 </script>        
 @endpush
 </x-adminlayout>
