@@ -176,15 +176,15 @@ $(window).scroll(function() {
 });
 
 
-$(window).scroll(function() { 
-  var scrollPosition = $(window).scrollTop();
-  if(scrollPosition >= 400){
-     $('#fixed-top').css("position","sticky");  
-     $('#fixed-top').css("top","70px");   
-  }else{
-    $('#fixed-top').css("position","");
-  }
-});
+// $(window).scroll(function() { 
+//   var scrollPosition = $(window).scrollTop();
+//   if(scrollPosition >= 400){
+//      $('#fixed-top').css("position","sticky");  
+//      $('#fixed-top').css("top","70px");   
+//   }else{
+//     $('#fixed-top').css("position","");
+//   }
+// });
 
 
   // Create mobile select dropdown

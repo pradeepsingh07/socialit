@@ -22,15 +22,25 @@
                      </div> 
                      <div class="col-md-12">
                          <x-form labelname="Blog Title" name="title">
-                          <input type="text" name="title" class="form-control f-14" placeholder="Category Name"/>
+                          <input type="text" name="title" class="form-control f-14" placeholder="Title"/>
                          </x-form>          
                      </div>  
                      <div class="col-md-12">
-                        <x-form labelname="Thumbnail Image" name="t_image">
-                          <input type="file" class="form-control file" name="t_image"/>
-                        </x-form> 
-                     </div> 
+                        <x-form labelname="Blog Meta Description" name="meta_d">
+                        <input type="text" name="meta_d" class="form-control f-14" placeholder="Meta Description"/>
+                        </x-form>          
+                     </div>
                      <div class="col-md-12">
+                       <x-form labelname="Blog Meta Keywords (Use a comma after a keyword like abc , xyz)" name="meta_key">
+                        <input type="text" name="meta_key" class="form-control f-14" placeholder="Meta Keywords"/>
+                      </x-form>          
+                     </div>
+                      <div class="col-md-12">
+                        <x-form labelname="Thumbnail Image (Image Size 1600 X 840)" name="t_image">
+                          <input accept="image/webp" type="file" class="form-control file" name="t_image"/>
+                        </x-form> 
+                      </div> 
+                      <div class="col-md-12">
                          <x-form labelname="Content" name="content">
                           <textarea id="content-area" class="form-control" name="content"></textarea>
                         </x-form>

@@ -9,7 +9,7 @@ class BlogModel extends Model
 {
     use HasFactory;
     protected $table = "blog";
-    protected $fillable = ['c_id','title','slug','thumbnail_image','content'];
+    protected $fillable = ['c_id','title','meta_d','meta_key','slug','thumbnail_image','content'];
 
     public function blogdata(){
         return $this->hasMany(BlogcategoryModel::class,'id','c_id');

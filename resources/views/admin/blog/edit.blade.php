@@ -24,9 +24,19 @@
                         <x-form labelname="Blog Title" name="title">
                           <input value="{{$data->title}}" type="text" name="title" class="form-control f-14" placeholder="Category Name"/>
                         </x-form>                        
-                     </div>  
+                     </div>
                      <div class="col-md-12">
-                        <x-form labelname="Thumbnail Image" name="t_image">
+                      <x-form labelname="Blog Meta Description" name="meta_d">
+                      <input value="{{$data->meta_d}}" type="text" name="meta_d" class="form-control f-14" placeholder="Meta Description"/>
+                      </x-form>          
+                   </div>
+                   <div class="col-md-12">
+                     <x-form labelname="Blog Meta Keywords (Use a comma after a keyword like abc , xyz)" name="meta_key">
+                      <input value="{{$data->meta_key}}" type="text" name="meta_key" class="form-control f-14" placeholder="Meta Keywords"/>
+                    </x-form>          
+                   </div>  
+                     <div class="col-md-12">
+                        <x-form labelname="Thumbnail Image (Image Size 1600 X 840)" name="t_image">
                           <input data-default-file="{{asset('storage/upload/'.$data->thumbnail_image)}}" type="file" class="form-control file" name="t_image"/>
                         </x-form>                        
                      </div> 

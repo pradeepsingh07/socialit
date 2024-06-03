@@ -81,8 +81,10 @@ class BlogController extends Controller
          if($request->ajax()){    
             $validation = Validator::make($request->all(),[
                 'category'=>'required | numeric',   
-                'title'=>'required | string',  
-                't_image'=>'required',
+                'title'=>'required | string',
+                'meta_d'=>'required', 
+                'meta_key'=>'required', 
+                't_image'=>'required | mimes:webp',
                 'content'=>'required', 
             ]);
             if($validation->fails()){
@@ -96,6 +98,8 @@ class BlogController extends Controller
                 BlogModel::create([
                     'c_id'=>$request->category,
                     'title'=>$request->title,
+                    'meta_d'=>$request->meta_d,
+                    'meta_key'=>$request->meta_key,
                     'slug'=> Str::slug($request->title),
                     'thumbnail_image'=> $filename,
                     'content'=>htmlspecialchars($request->content),
@@ -119,6 +123,7 @@ class BlogController extends Controller
                 'category'=>'required | numeric',   
                 'title'=>'required | string',             
                 'content'=>'required',
+                't_image'=>'mimes:webp',
                 
             ]);
             if($validation->fails()){
@@ -139,6 +144,8 @@ class BlogController extends Controller
                   }
                   BlogModel::where('id',$id)->update([
                       'title'=>$request->title,  
+                      'meta_d'=>$request->meta_d,
+                      'meta_key'=>$request->meta_key,
                       'thumbnail_image'=>$image,
                       'slug'=> Str::slug($request->title),               
                       'content'=>$request->content,   

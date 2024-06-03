@@ -1,30 +1,28 @@
 @extends('frontlayout.mainlayout')
 @section('section')
-<section id="hero-banner" class="blog-show">    
-    <img src="{{asset('storage/upload/'.$data->thumbnail_image)}}" class="img-fluid" alt=""/>
-</section>
-<section id="blog-content" class="ptb">
-    <div class="container-fluid res-container">
-         <div class="row mx-md-5 mx-lg-5">
-              <div class="col-md-8">
-                <h1 class="text-capitalize">{{$data->title}}</h1>
-                <div class="card w-100 mt-5">                    
-                    <div class="content-area mt-4">
-                         {!! htmlspecialchars_decode($data->content) !!}
-                    </div> 
+ <section id="blog-content" class="ptb">
+ <div class="container-fluid mt-5">
+    <div class="row mx-md-5 mx-lg-5">  
+        <div class="col-lg-8">
+            <article class="custom-shadow p-4 mb-4 bg-white rounded">
+                <h1 class="blog-title mb-3">{{$data->title}}</h1>
+                <p class="text-muted"><time datetime="2023-01-01">January 1, 2023</time></p>
+                <img src="{{asset('storage/upload/'.$data->thumbnail_image)}}" class="img-fluid post-img mb-4" alt="Blog Post Image">
+                <p>{!! htmlspecialchars_decode($data->content) !!}</p>
+                </article>
+        </div>
+        <div class="col-lg-4">        
+            <div class="p-4 mb-4 bg-white rounded custom-shadow">
+                <h4 class="fst-italic mb-3">Recent Posts</h4>
+                <div class="list-group sidebar">
+                    <a href="#" class="list-group-item">Post 1</a>
+                    <a href="#" class="list-group-item">Post 2</a>
+                    <a href="#" class="list-group-item">Post 3</a>
                 </div>
-              </div>
-              <div class="col-md-4">
-                 <div id="fixed-top">                     
-                  <h5 class="mb-3">Related Post</h5>
-                  <div class="card">
-                      <a href="#"><div class="post-heading">Why Laravel is the best backhand framework right now</div></a>
-                      <a href="#"><div class="post-heading">Why Laravel is the best backhand framework right now</div></a>
-                  </div>
-                 </div>
-              </div>              
-         </div> 
+            </div>
+        </div>
     </div>
-</section>
+ </div>
+ </section>
 @include('frontlayout.contactform')
 @endsection

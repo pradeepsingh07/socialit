@@ -2,7 +2,6 @@
 @section('section')
 <section id="hero-banner" class="work">    
   <h1>{{$data->title}}</h1> 
-  <p class="para-font-hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio beatae, iure fuga deserunt, consequatur, dignissimos ipsam rerum saepe labore tenetur sequi ea porro aspernatur est praesentium veniam quod! Animi.</p>
    <div class="imgwork">
      <img src="{{asset('images/work/men.png')}}" class="img-fluid"/>
    </div>
@@ -10,8 +9,19 @@
 <section id="singlework" class="ptb">
     <div class="container-fluid res-container"> 
          <div class="row mx-md-3 mx-lg-3">
-           <div class="col-12 col-md-4"><h2>About The {{$data->title}}</h2></div>
+           <div class="col-12 col-md-4">
+            <img src="{{asset('images/kk.png')}}" class="img-fluid" alt=""/>
+           </div>
            <div class="col-12 col-md-8">
+            <h3 class="mb-3">About The {{$data->title}}</h3>
+             <div class="icon alert alert-secondary rounded-0 border-start border-top-0 border-bottom-0 border-end-0 border-5 border-secondary">
+               <a target="_blank" href=""><img src="{{asset('images/icon/facebook.png')}}" alt="facebook" class="sm-icon img-fluid"/></a>
+               <a target="_blank" href=""><img src="{{asset('images/icon/instagram.png')}}" alt="facebook" class="sm-icon img-fluid"/></a>
+               <a target="_blank" href=""><img src="{{asset('images/icon/youtube.png')}}" alt="facebook" class="sm-icon img-fluid"/></a>
+               <a target="_blank" href=""><img src="{{asset('images/icon/pinterest.png')}}" alt="facebook" class="sm-icon img-fluid"/></a>
+               <a target="_blank" href=""><img src="{{asset('images/icon/linkedin.png')}}" alt="facebook" class="sm-icon img-fluid"/></a> 
+               <a target="_blank" href=""><img src="{{asset('images/icon/twitter.png')}}" alt="facebook" class="sm-icon img-fluid"/> </a>
+             </div>
              <p>{{$data->content}}</p>
            </div>
          </div>

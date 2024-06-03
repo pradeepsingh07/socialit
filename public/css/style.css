@@ -648,6 +648,32 @@ body{
    border-bottom:0px solid #000;  
 }
 
+.blog-title {
+    font-size: 2.5rem;
+    color: #343a40;
+}
+.blog-footer {
+    background-color: #343a40;
+    color: #ffffff;
+}
+.blog-footer a {
+    color: #ffffff;
+}
+.sidebar .list-group-item {
+    background-color: #343a40;
+    color: #ffffff;
+}
+.sidebar .list-group-item:hover {
+    background-color: #495057;
+}
+.custom-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.post-img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
 
 /*======================Career Css=========================*/
 
@@ -924,6 +950,15 @@ body{
     border-radius:50px;    
     display: flex;
     gap:5px;
+ }
+
+ .icon .sm-icon{
+    width:30px !important;   
+ }
+
+ .icon{
+    display: flex;
+    gap:20px;
  }
 
 

@@ -1,11 +1,18 @@
+@php 
+$decodecontent= htmlspecialchars_decode(strip_tags($des));
+$withouttags = strip_tags($decodecontent);
+strip_tags($withouttags);
+
+
+
+@endphp
 <div class="col-12 col-sm-2 col-md-4 col-lg-4">
     <a href="{{route('front.blogurl',$url)}}">
        <div class="card h-100">
           <img data-src="{{asset('storage/upload/'.$image)}}" src="{{asset('storage/upload/'.$image)}}" class="img-fluid lazy" alt=""/> 
           <div class="card-body">
-             {{-- <div class="card-title date">{{date('d M Y',strtotime($date))}}</div> --}}
              <h2 class="title">{{$title}}</h2>
-             <p class="des">{{substr(strip_tags(htmlspecialchars_decode($des)),0,100).'...'}}</p>
+             <p class="des">{!! strip_tags($withouttags) !!}</p>
           </div>
           <div class="card-footer d-flex">
              <div class="authorname">{{date('d M Y',strtotime($date))}}</div>

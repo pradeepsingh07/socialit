@@ -194,6 +194,8 @@ return [
         'c_rating'=>'client rating',
         'd_name'=>'desgination name',
         't_image'=>'Thumbnail Image',
+        'meta_d'=>'Meta Description',
+        'meta_key'=>'Meta Keywords',
     ],
 
 ];
