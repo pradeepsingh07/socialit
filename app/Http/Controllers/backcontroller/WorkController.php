@@ -69,7 +69,7 @@ class WorkController extends Controller
    
      public function store(Request $request)
      {
-        if($request->ajax()){    
+        if($request->ajax()){            
             $validation = Validator::make($request->all(),[
                 'category'=>'required | numeric',   
                 'title'=>'required | string',  
@@ -82,6 +82,21 @@ class WorkController extends Controller
                     'message'=>$validation->errors(),
                 ]);
             }else{
+                $fb = $request->fb;
+                $insta = $request->insta;
+                $yt = $request->yt;
+                $pt = $request->pt;
+                $pt = $request->pt;
+                $ld = $request->ld;
+                $tw = $request->tw;
+                $sm_icons = [
+                   'facebook' => $fb,
+                   'instagram' => $insta,
+                   'youtube' => $yt,
+                   'pinterest' => $pt,
+                   'linkedin' => $ld,
+                   'twitter' => $tw,
+                ];
                 $thumbnail = $request->file('t_image');
                 $filename = 'work-thumbnail' . rand(100000, 999999) . '.' . $thumbnail->getClientOriginalExtension();
                 $thumbnail->storeAs('public/upload/work', $filename);
@@ -98,6 +113,7 @@ class WorkController extends Controller
                     'thumbnail_image' => $filename,
                     'content' => $request->content,
                     'work_images' => $workImages,
+                    'sm_icons'=>$sm_icons,
                 ]);
                 session()->flash('type', 'success');
                 session()->flash('message', 'Successfully Created');
@@ -108,14 +124,30 @@ class WorkController extends Controller
    
      public function edit(string $id){
         $datas = WorkcategoryModel::get();
-        $workdata = WorkModel::where('id',$id)->first();
+        $workdata = WorkModel::where('id',$id)->first();    
         return view('admin/work/edit',compact('datas','workdata'));
      }
 
    
-     public function update(Request $request, string $id){
-       
-         $workImages = [];
+     public function update(Request $request, string $id){ 
+                
+         if($request->ajax()){             
+            $fb = $request->fb;
+            $insta = $request->insta;
+            $yt = $request->yt;
+            $pt = $request->pt;
+            $pt = $request->pt;
+            $ld = $request->ld;
+            $tw = $request->tw;
+            $sm_icons = [
+               'facebook' => $fb,
+               'instagram' => $insta,
+               'youtube' => $yt,
+               'pinterest' => $pt,
+               'linkedin' => $ld,
+               'twitter' => $tw,
+            ];
+            $workImages = [];
             if($request->workimages != ""){
              foreach ($request->workimages as $image) {
                 $imageFilename = 'work' . rand(100000, 999999) . '.' . $image->getClientOriginalExtension();
@@ -132,8 +164,6 @@ class WorkController extends Controller
             }else{
                 $work_images_files=[];
             }
-                
-         if($request->ajax()){    
             $validation = Validator::make($request->all(),[
                 'category'=>'required | numeric',   
                 'title'=>'required | string',
@@ -164,6 +194,7 @@ class WorkController extends Controller
                     'thumbnail_image' => $filename,
                     'content' => $request->content,
                     'work_images'=>$work_images_files,
+                    'sm_icons'=>$sm_icons,
                 ]);            
                 session()->flash('type', 'success');
                 session()->flash('message', 'Successfully Updated');            

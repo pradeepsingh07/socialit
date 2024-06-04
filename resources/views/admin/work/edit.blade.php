@@ -37,6 +37,36 @@
                             <textarea id="content" class=" height-content-cus form-control" name="content">{{$workdata->content}}</textarea>
                          </x-form>                         
                      </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Facebook Url" name="fb">
+                           <input value="{{$workdata->sm_icons['facebook']}}" type="url" class="form-control" name="fb"/>
+                        </x-form>             
+                     </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Instagram Url" name="insta">
+                           <input value="{{$workdata->sm_icons['instagram']}}" type="url" class="form-control" name="insta"/>
+                        </x-form>             
+                     </div> 
+                     <div class="col-md-4">
+                        <x-form labelname="Youtube Url" name="yt">
+                           <input value="{{$workdata->sm_icons['youtube']}}" type="url" class="form-control" name="yt"/>
+                        </x-form>             
+                     </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Pinterest Url" name="pt">
+                           <input value="{{$workdata->sm_icons['pinterest']}}" type="url" class="form-control" name="pt"/>
+                        </x-form>             
+                     </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Linkedin Url" name="ld">
+                           <input value="{{$workdata->sm_icons['linkedin']}}" type="url" class="form-control" name="ld"/>
+                        </x-form>             
+                     </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Twitter Url" name="tw">
+                           <input value="{{$workdata->sm_icons['twitter']}}" type="url" class="form-control" name="tw"/>
+                        </x-form>             
+                     </div>
                      <div class="col-md-12">
                         <x-form labelname="Work Images (Multipule Upload)" name="workimages">
                             <input  type="file" class="form-control" name="workimages[]" id="images" multiple/>

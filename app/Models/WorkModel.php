@@ -9,10 +9,11 @@ class WorkModel extends Model
 {
     use HasFactory;
     protected $table = "work";
-    protected $fillable = ['c_id','title','slug','thumbnail_image','content','work_images'];
+    protected $fillable = ['c_id','title','slug','thumbnail_image','content','work_images','sm_icons'];
     public $timestamps = false;
     protected $casts = [
-        'work_images'=>'json'
+        'work_images'=>'json',
+        'sm_icons'=>'json'
    ];
 
    public function withdata(){

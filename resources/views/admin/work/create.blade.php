@@ -31,15 +31,45 @@
                          <x-form labelname="Thumbnail Image" name="t_image">
                             <input type="file" class="form-control file" name="t_image"/>
                          </x-form>             
-                     </div> 
+                     </div>                   
                      <div class="col-md-6">
                          <x-form labelname="Content (Like About Brand)" name="content">
                             <textarea class="height-content-cus form-control" name="content"></textarea>
                          </x-form> 
                      </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Facebook Url" name="fb">
+                           <input type="url" class="form-control" name="fb"/>
+                        </x-form>             
+                     </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Instagram Url" name="insta">
+                           <input type="url" class="form-control" name="insta"/>
+                        </x-form>             
+                     </div> 
+                     <div class="col-md-4">
+                        <x-form labelname="Youtube Url" name="yt">
+                           <input type="url" class="form-control" name="yt"/>
+                        </x-form>             
+                     </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Pinterest Url" name="pt">
+                           <input type="url" class="form-control" name="pt"/>
+                        </x-form>             
+                     </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Linkedin Url" name="ld">
+                           <input type="url" class="form-control" name="ld"/>
+                        </x-form>             
+                     </div>
+                     <div class="col-md-4">
+                        <x-form labelname="Twitter Url" name="tw">
+                           <input type="url" class="form-control" name="tw"/>
+                        </x-form>             
+                     </div>
                      <div class="col-md-12">
                         <x-form labelname="Work Images (Multipule Upload)" name="workimages">
-                            <input type="file" class="form-control" name="workimages[]" id="images" multiple required/>
+                            <input type="file" class="form-control" name="workimages[]" id="images" multiple/>
                         </x-form>
                         <div class="mb-3">
                             <div class="row g-4" id="imagePreview"></div>

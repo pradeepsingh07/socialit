@@ -9,5 +9,5 @@ class WorkcategoryModel extends Model
 {
     use HasFactory;
     protected $table = "work_category";
-    protected $fillable = ['category_name'];
+    protected $fillable = ['category_name','order'];
 }
