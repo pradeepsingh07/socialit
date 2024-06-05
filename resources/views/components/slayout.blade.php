@@ -9,8 +9,7 @@
     </div>
 </section>
 <section id="service-inner-page" class="ptb">
-    <h2 class="text-center mb-3">{{$heading2}}</h2>
-    <p class="para-font">{{$h2para}}</p>
+    <h2 class="text-center mb-5">{{$heading2}}</h2>   
      <div class="container-fluid res-container">  
         <div class="row mx-md-5 mx-lg-5 g-4">
              <div class="col-md-4 col-lg-4">

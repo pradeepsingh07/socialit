@@ -12,7 +12,6 @@ class slayout extends Component
     public $heading;
     public $heading2;
     public $hpara;
-    public $h2para;
     public $ch1;
     public $ch2;
     public $ch3;
@@ -21,12 +20,11 @@ class slayout extends Component
     public $cpara3;
     
 
-    public function __construct($heading,$heading2,$hpara,$h2para,$ch1,$ch2,$ch3,$cpara1,$cpara2,$cpara3)
+    public function __construct($heading,$heading2,$hpara,$ch1,$ch2,$ch3,$cpara1,$cpara2,$cpara3)
     {
         $this->heading = $heading;
         $this->heading2 = $heading2;
-        $this->hpara = $hpara;
-        $this->h2para = $h2para;
+        $this->hpara = $hpara;        
         $this->ch1 = $ch1;
         $this->ch2 = $ch2;
         $this->ch3 = $ch3;

@@ -16,16 +16,12 @@
                          </x-form>                       
                      </div>
                      <div class="col-md-6">
-                        <x-form labelname="Client Rating" name="c_rating">
-                             <select class="form-control f-14" name="c_rating">                      
-                                <option value="1">4</option>
-                                <option value="1">4.5</option>
-                                <option value="1">5</option>
-                             </select> 
-                        </x-form>                               
-                    </div>
+                        <x-form labelname="Client Desgination" name="c_name">
+                           <input type="text" name="cd" class="form-control f-14" placeholder="Client Desgination"/>
+                        </x-form>                       
+                    </div>              
                     <div class="col-md-6">
-                         <x-form labelname="Client Image" name="c_image">
+                         <x-form labelname="Client Image (Image Size 347 X 161)" name="c_image">
                             <input accept="image/webp" data-default-file="" value="" type="file" name="c_image" class="file"/>
                          </x-form>                                               
                     </div>
