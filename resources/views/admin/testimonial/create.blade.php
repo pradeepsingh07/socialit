@@ -16,7 +16,7 @@
                          </x-form>                       
                      </div>
                      <div class="col-md-6">
-                        <x-form labelname="Client Desgination" name="c_name">
+                        <x-form labelname="Client Desgination" name="cd">
                            <input type="text" name="cd" class="form-control f-14" placeholder="Client Desgination"/>
                         </x-form>                       
                     </div>              

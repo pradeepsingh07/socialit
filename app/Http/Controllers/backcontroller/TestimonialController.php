@@ -35,6 +35,7 @@ class TestimonialController extends Controller
                 $jsondata[]=array(
                    'index'=>$key+1,
                    'name'=>$data->name,
+                   'desgination'=>$data->desgination,
                    'image'=> '<img id="img" class="img-fluid" src="'.asset('/storage/upload/'.$data->image).'"/>',
                    'rating'=>$data->rating,
                    'review'=>$data->review,
@@ -60,7 +61,7 @@ class TestimonialController extends Controller
         if($request->ajax()){
             $validation = validator::make($request->all(),[
                  'c_name'=>'required | string',
-                 'c_rating'=>'required',
+                 'cd'=>'required',
                  'c_image'=>'required | max:1024 | mimes:webp',
                  'c_review'=>'required'
              ]);
@@ -75,8 +76,9 @@ class TestimonialController extends Controller
                 $request->file("c_image")->storeAs("public/upload",$filename);
                 TestimonialModel::create([
                     'name'=>$request->c_name,
+                    'desgination'=>$request->cd,
                     'image'=>$filename,
-                    'rating'=>$request->c_rating,
+                    'rating'=>"",
                     'review'=>$request->c_review,
                 ]);
                 session()->flash('type','success');
@@ -113,7 +115,7 @@ class TestimonialController extends Controller
         if($request->ajax()){
             $validation = validator::make($request->all(),[
                  'c_name'=>'required | string',
-                 'c_rating'=>'required',
+                 'cd'=>'required',                 
                  'c_review'=>'required'
              ]);
 
@@ -133,9 +135,10 @@ class TestimonialController extends Controller
                    Storage::delete("public/upload/".$data->image);
                 }
                 TestimonialModel::where('id',$id)->update([
-                    'name'=>$request->c_name,  
+                    'name'=>$request->c_name, 
+                    'desgination'=>$request->cd, 
                     'image'=>$image,               
-                    'rating'=>$request->c_rating,                  
+                    'rating'=>"",                  
                     'review'=>$request->c_review,
                 ]);
                 session()->flash('type','success');

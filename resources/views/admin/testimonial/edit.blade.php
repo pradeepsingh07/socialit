@@ -15,7 +15,12 @@
                             <input value="{{$data->name}}" type="text" name="c_name" class="form-control f-14" placeholder="Client Name"/>
                          </x-form>  
                      </div>
-                     <div class="col-md-6">                         
+                     <div class="col-md-6">
+                        <x-form labelname="Client Desgination" name="cd">
+                           <input value="{{$data->desgination}}" type="text" name="cd" class="form-control f-14" placeholder="Client Desgination"/>
+                        </x-form>                       
+                    </div>  
+                     {{-- <div class="col-md-6">                         
                         <x-form labelname="Client Rating" name="c_rating">
                              <select class="form-control f-14" name="c_rating">                      
                                 <option {{$data->rating == '4' ? 'selected' : ''}} value="4">4</option>
@@ -23,7 +28,7 @@
                                 <option {{$data->rating == '5' ? 'selected' : ''}} value="5">5</option>
                               </select> 
                        </x-form>                             
-                    </div>
+                    </div> --}}
                     <div class="col-md-6">                          
                         <x-form labelname="Client Image" name="c_image">
                           <input data-default-file="{{asset('storage/upload/'.$data->image)}}" type="file" name="c_image" class="file"/>

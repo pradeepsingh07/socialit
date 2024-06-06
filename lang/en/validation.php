@@ -196,6 +196,7 @@ return [
         't_image'=>'Thumbnail Image',
         'meta_d'=>'Meta Description',
         'meta_key'=>'Meta Keywords',
+        'cd'=>'Client Designation'
     ],
 
 ];

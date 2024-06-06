@@ -10,7 +10,7 @@
                      <th>Sr No</th>
                      <th>Name</th>
                      <th>Image</th>
-                     <th>Rating</th>
+                     <th>Desgination</th>
                      <th>Content</th>
                      <th>Status</th>
                      <th>Action</th>
@@ -31,7 +31,7 @@
             { data:'index'},
             { data:'name'}, 
             { data:'image',"orderable":false},
-            { data:'rating',"orderable":false}, 
+            { data:'desgination',"orderable":false}, 
             { data:'review',"orderable":false},    
             { data:'status',"orderable":false},
             { data:'action',"orderable":false},
