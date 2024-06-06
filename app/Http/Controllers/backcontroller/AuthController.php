@@ -34,7 +34,7 @@ class AuthController extends Controller
                     $otp = genrateotp();
                     $user_data = AuthModel::select('name','otp','email')->
                     where('email',$request->email)->first(); 
-                     $mail=Mail::to($user_data->email)->send(new Sendotp($user_data->name,$otp));
+                     $mail=Mail::to($user_data->email)->send(new Sendotp($user_data->name,$otp));                  
                      if($mail){
                         AuthModel::where('email',$request->email)->update([
                             'otp'=>$otp
