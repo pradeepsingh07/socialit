@@ -77,7 +77,10 @@ class HomeController extends Controller
     public function mg(){
         return view('mg');
     }
-
+    public function services(){
+        return view('services');
+    }
+    
     //  Work 
     public function workurl($workurl){
         $data = WorkModel::where('slug',$workurl)->first();

@@ -111,7 +111,7 @@
               </div>
               <div class="accordion-item">
                   <h2 class="accordion-header">
-                      <a href="https://google.com" class="accordion-button single-btn demo" type="button">Get Started</a>
+                      <a href="{{ route('front.contact') }}" class="accordion-button single-btn demo" type="button">Get Started</a>
                   </h2>
               </div>
           </div>

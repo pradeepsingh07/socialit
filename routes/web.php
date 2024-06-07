@@ -36,11 +36,7 @@ Route::get('/logo-design',[HomeController::class,'l'])->name('front.l');
 Route::get('/print-media',[HomeController::class,'pm'])->name('front.pm');
 Route::get('/digital-banners',[HomeController::class,'db'])->name('front.db');
 Route::get('/motion-graphics',[HomeController::class,'mg'])->name('front.mg');
-
-
-
-
-
+Route::get('/services',[HomeController::class,'services'])->name('front.services');
 Route::get('/work/{workurl:slug}',[HomeController::class,'workurl'])->name('front.workurl');
 Route::get('/card-show',[HomeController::class,'cardshow'])->name('front.cardshow');
 Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('front.blogurl');

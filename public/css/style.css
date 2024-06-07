@@ -1620,11 +1620,16 @@ footer ul li a{
     #copyright .container .ordercus-1{order:-1 !important;}
     #openingsjob .applybtn , #openingsjob .viewbtn { padding:8px 15px; font-size:13px;}
     #openingsjob .btngrp{ text-align: start; margin-top:20px; align-items: center;} 
-    #openingsjob .btngrp .btn-outline-primary , .btn-primary{
-        min-width:160px !important;
-        /* font-size:13px; */
+    #openingsjob .btngrp .btn-outline-primary ,  #openingsjob .btngrp  .btn-primary{
+        min-width:120px !important;
+        font-size:13px !important;
+        padding: 7px 20px;
     }
-
+    #openingsjob .btn-primary{
+        line-height:28px !important;
+        border:none;
+       
+    }
     #contactform .col-md-6:last-child{margin-top:25px;}
     .work .imgwork img{width:100px;}
     #hero-banner button{ width:150px; font-size:12px; height:40px;}

@@ -1,6 +1,6 @@
 <section id="service-inner-page-2nd" class="ptb">
     <div class="container-fluid res-container">
-        <div class="row mx-md-5 mx-lg-5 align-items-center gx-5">
+        <div class="row mx-md-5 mx-lg-5 align-items-center gx-4">
             <div class="col-md-4 {{$order}}">
              <div class="card">
                 <div class="card-header">{{$headertitle}}</div>

@@ -23,7 +23,7 @@
             <x-servicecard href="#" title="design" image="images/service/smm.webp"/>  
             <x-servicecard href="#" title="app development" image="images/service/app.webp"/> 
             <div class="text-center">
-                <a href="" class="btn btn-outline-primary">View All Services <i class="bi bi-arrow-right"></i></a>
+                <a href="{{ route('front.services') }}" class="btn btn-outline-primary">View All Services <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </div>
