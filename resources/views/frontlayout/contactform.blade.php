@@ -37,17 +37,17 @@
             </div>   
             <div class="col-md-6">
                 <div class="row">
-                     <div class="col-md-6">
+                    <div class="col-md-6">
                         <div class="mb-4">                 
                             <h6><img src="{{asset('/images/india.webp')}}" class="img-fluid"/> H-14(B), Electronic Complex, Road No.1, IPIA,<br> Kota, Rajasthan 324009</h6>
                             <a href="tel:+91"><img src="{{asset('/images/india.webp')}}" class="img-fluid"/> +91 6375610393</a>
                         </div>
-                     </div>
-                     <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                         <div class="mb-4">                 
                             <h6><img src="{{asset('/images/us.webp')}}" class="img-fluid"/> 1751 2nd Ave, New York City,<br> NY, 10128</h6>
-                         </div>
-                     </div>
+                        </div>
+                    </div>
                 </div> 
                 <div class="marquee">
                     <div class="left"></div>
@@ -60,10 +60,7 @@
                         <h4>Schedule a meeting</h4> 
                     </div> 
                     <div class="right"></div>                            
-                </div>
-                {{-- <div class="call-img">
-                   <img src="{{asset('images/call.png')}}" class="img-fluid" alt="call-now"/>
-                </div> --}}
+                </div>            
             </div>           
         </div>
     </div>   

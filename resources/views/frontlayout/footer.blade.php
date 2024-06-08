@@ -4,19 +4,19 @@
            <div class="col-md-3">
                  <h4>Services</h4>
                  <ul>
-                     <li><a href="#">Web Development</a></li>
-                     <li><a href="#">Digital Marketing</a></li>
-                     <li><a href="#">Social Media Marketing</a></li>                  
-                     <li><a href="#">UI/UX Design</a></li>                   
+                     <li><a href="#">Development</a></li>
+                     <li><a href="#">Marketing</a></li>
+                     <li><a href="#">Design</a></li>                  
+                     <li><a href="#">Design</a></li>                   
                  </ul>
            </div>
            <div class="col-md-3">
             <h4>Company</h4>
             <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">career</a></li>
-                <li><a href="#">Blog</a></li>                  
-                <li><a href="#">Contact</a></li>                   
+                <li><a href="">About Us</a></li>
+                <li><a href="{{route('front.career')}}">career</a></li>
+                <li><a href="{{route('front.blog')}}">Blog</a></li>                  
+                <li><a href="{{route('front.contact')}}">Contact</a></li>                   
             </ul>
           </div>
           <div class="col-md-3">
@@ -24,8 +24,8 @@
             <ul>
                 <li><a href="#">privacy policy</a></li>
                 <li><a href="#">terms of use</a></li>
-                <li><a href="#">case studies</a></li>                  
-                <li><a href="#">Contact</a></li>                   
+                <li><a href="{{route('front.work')}}">case studies</a></li>                  
+                <li><a href="{{route('front.contact')}}">Contact</a></li>                   
             </ul>
          </div>
       </div>
@@ -39,10 +39,12 @@
              </div>
              <div class="col-12 col-md-6 ordercus-1">
                 <div class="socialmedia">
-                    <a target="_blank" href="#">Facebook</a>
-                    <a target="_blank" href="#">Twitter</a>
-                    <a target="_blank" href="#">Instagram</a>
-                    <a target="_blank" href="#">Linkedin</a>
+                    <a target="_blank" href="https://www.facebook.com/Socialitindia">Facebook</a>
+                    <a target="_blank" href="https://x.com/socialitindia">Twitter</a>
+                    <a target="_blank" href="https://www.instagram.com/socialit.in/">Instagram</a>
+                    <a target="_blank" href="https://www.linkedin.com/company/socialitofficial">Linkedin</a>
+                    <a target="_blank" href="https://www.behance.net/socialitindia">Behance</a>
+                    <a target="_blank" href="https://in.pinterest.com/socialitindia/">Pinterest</a>
                 </div>
              </div>
         </div>

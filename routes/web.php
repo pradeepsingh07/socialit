@@ -38,7 +38,7 @@ Route::get('/digital-banners',[HomeController::class,'db'])->name('front.db');
 Route::get('/motion-graphics',[HomeController::class,'mg'])->name('front.mg');
 Route::get('/services',[HomeController::class,'services'])->name('front.services');
 Route::get('/work/{workurl:slug}',[HomeController::class,'workurl'])->name('front.workurl');
-Route::get('/card-show',[HomeController::class,'cardshow'])->name('front.cardshow');
+Route::get('/blog',[HomeController::class,'blog'])->name('front.blog');
 Route::get('/blog/{blogurl:slug}',[HomeController::class,'blogurl'])->name('front.blogurl');
 
 

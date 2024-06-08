@@ -32,6 +32,9 @@
 .btn-primary:hover{
    background:#B61637;
 }
+.btn-primary:disabled{
+    background:#B61637;
+ }
 .btn-primary:active{
     background:#B61637 !important;
  }
@@ -673,6 +676,15 @@ body{
     max-height: 400px;
     object-fit: cover;
     width: 100%;
+}
+
+#blog-area .pagination .active > .page-link{
+    background:var(--primaryColor) !important;
+    border:1px solid var(--primaryColor);
+}
+#blog-area .page-link:focus{
+    outline:none;
+    box-shadow:none;
 }
 
 /*======================Career Css=========================*/
@@ -1361,53 +1373,67 @@ body{
     background: var(--bgColor) !important;
  }
  
+ /*======================Service Page=========================*/
 
+  #service-page .bi{
+    font-size:46px !important; 
+    font-weight:300;
+  }
 
+  #service-page .card{
+    border-radius:var(--borderradius);
+  }
 
-/*======================contact Css=========================*/
+  #service-page h3{
+    font-size:22px !important; 
+    margin-bottom:15px !important;
+    margin-top:15px !important;
+  }
 
-.contact{
+ /*======================contact Css=========================*/
+
+ .contact{
     height:250px !important;
     margin-top:calc(100px - 34px);
     padding:20px 0px !important; 
     border-bottom:2px solid var(--borderColor);
    
-}
+ }
 
-#contactform{
+ #contactform{
     background:var(--bcolor);  
     position: relative;
-}
+ }
 
-#contactform form{
+ #contactform form{
     background:#191919;
     padding:30px 10px;    
     border:1px solid var(--footertextColor);
     border-radius:20px;
-}
+ }
 
-#contactform form .form-control{
+ #contactform form .form-control{
     height:50px;   
     border:none;
     background:var(--borderColor);
     color:#fff;
     font-size:13px;
-}
+ }
 
-#contactform form .form-control::placeholder{
+ #contactform form .form-control::placeholder{
     color:#fff;
     font-size:13px;
-}
+ }
 
-#contactform form textarea{
+ #contactform form textarea{
     height:80px !important;
-}
+ }
 
-#contactform form h2{
+ #contactform form h2{
     color:#fff; 
     font-size:32px;  
     padding:20px 5px;
-}
+ }
 
 #contactform h6{
     margin-left:10px;
@@ -1769,4 +1795,4 @@ footer ul li a{
       width: 100%;
     }
   }
-  
+ 

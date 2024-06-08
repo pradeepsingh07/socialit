@@ -102,7 +102,7 @@ class BlogController extends Controller
                     'meta_key'=>$request->meta_key,
                     'slug'=> Str::slug($request->title),
                     'thumbnail_image'=> $filename,
-                    'content'=>htmlspecialchars($request->content),
+                    'content'=>$request->content,
                 ]);
                 session()->flash('type','success');
                 session()->flash('message','Successfully Created');

@@ -11,16 +11,19 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+     public function index(){
         return view('index');
-    }
-    public function blog(){       
-        return view('blog');
-    }
-    public function career(){
+     }
+     public function blog(Request $request){              
+        $datas = BlogModel::with('blogdata')->latest('created_at')  
+        ->paginate(1);       
+        return view('blog',compact('datas'));
+     }
+
+     public function career(){
         $datas = CareerModel::where('status','active')->get();
         return view('career',compact('datas'));
-    }
+     }
     public function work(){
         $datas = WorkcategoryModel::orderBy('order','ASC')->get();
         $catdatas = WorkModel::with('withdata')->get();
@@ -87,26 +90,17 @@ class HomeController extends Controller
         return view('workshow',compact('data'));        
     }
 
-    //  Blog  
-    public function blogurl($blogurl){        
+     //  Blog  
+     public function blogurl($blogurl){        
         $count = BlogModel::where('slug',$blogurl)->count();
         if($count == 1){
-            $data = BlogModel::where('slug',$blogurl)->first();
-            return view('blogshow',compact('data'));
+             $data = BlogModel::with('blogdata')->where('slug',$blogurl)->first();
+             $cate_id = $data->blogdata->first()->id;
+             $recentposts = BlogModel::with('blogdata')->whereNot('slug',$blogurl)
+             ->where('c_id',$cate_id)->latest('created_at')->get();                         
+            return view('blogshow',compact('data','recentposts'));
         }else{
             abort('404');
         } 
-    } 
-    public function cardshow(Request $request){
-        $datas = BlogModel::with('blogdata')
-        ->limit(1)
-        ->offset($request->page)
-        ->get();
-        $html =  view('frontlayout.ajax-blog',compact('datas'))->render();
-        return response()->json([
-            'html'=>$html,
-            'message'=>'success'
-        ]); 
-    }
-
+     }
 }
