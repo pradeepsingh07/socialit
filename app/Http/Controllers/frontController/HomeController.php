@@ -12,7 +12,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
      public function index(){
-        return view('index');
+        $blogs = BlogModel::limit(10)->latest('created_at')->get();
+        return view('index',compact('blogs'));
      }
      public function blog(Request $request){              
         $datas = BlogModel::with('blogdata')->latest('created_at')  

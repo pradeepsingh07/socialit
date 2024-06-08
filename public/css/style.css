@@ -536,11 +536,22 @@ body{
    border-radius:10px;   
 }
 #blog-area .title{
-    font-size:20px;
+    font-size:18px;
     margin-bottom:16px !important;
+    display: -webkit-box;
+    max-width:400px;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 #blog-area .des{
     font-size:14px;
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
 }
 #blog-area .date{
     font-size:14px;
@@ -671,6 +682,7 @@ body{
 }
 .custom-shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
 }
 .post-img {
     max-height: 400px;
@@ -685,6 +697,14 @@ body{
 #blog-area .page-link:focus{
     outline:none;
     box-shadow:none;
+}
+
+#blog-area .blogs-slide .slick-list{
+    height:100%;
+}
+
+#blog-area .blogs-slide .slick-list .slick-track{
+    height:100%;
 }
 
 /*======================Career Css=========================*/

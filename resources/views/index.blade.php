@@ -215,76 +215,18 @@
     <div class="container-fluid res-container">          
         <div class="row mx-md-3 mx-lg-3 blog-card-group mx-md-5 mx-lg-5 gx-4">
             <div class="blogs-slide">
-                <a href="">
-                    <div class="card">
-                        <img src="{{ asset('images/1.webp') }}" class="img-fluid" alt=""/> 
+                 @foreach($blogs as $blog)
+                 <a href="{{route('front.blogurl',['blogurl'=>$blog->slug])}}">
+                    <div class="card h-100">
+                        <img src="{{asset('storage/upload/'.$blog->thumbnail_image)}}" class="img-fluid" alt=""/> 
                         <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
+                            <div class="card-title date">{{date('d M Y',strtotime($blog->created_at))}}</div>
+                            <h2 class="title">{{$blog->title}}</h2>
+                            <p class="des">{!! strip_tags($blog->content) !!}</p>
                         </div>                           
                     </div>
-                </a>
-                <a href="">
-                    <div class="card">
-                        <img src="{{ asset('images/1.webp') }}" class="img-fluid" alt=""/> 
-                        <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                        </div>                       
-                    </div>
-                </a>
-                <a href="">
-                    <div class="card">
-                        <img src="{{ asset('images/1.webp') }}" class="img-fluid" alt=""/> 
-                        <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                        </div>                      
-                    </div>
-                </a>
-                <a href="">
-                    <div class="card">
-                        <img src="{{ asset('images/1.webp') }}" class="img-fluid" alt=""/> 
-                        <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                        </div>                       
-                    </div>
-                </a>
-                <a href="">
-                    <div class="card">
-                        <img src="{{ asset('images/1.webp') }}" class="img-fluid" alt=""/> 
-                        <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                        </div>                         
-                    </div>
-                </a>
-                <a href="">
-                    <div class="card">
-                        <img src="{{ asset('images/1.webp') }}" class="img-fluid" alt=""/> 
-                        <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                        </div>                       
-                    </div>
-                </a>
-                <a href="">
-                    <div class="card">
-                        <img src="{{ asset('images/1.webp') }}" class="img-fluid" alt=""/> 
-                        <div class="card-body">
-                            <div class="card-title date">15 Feb 2024</div>
-                            <h2 class="title">Top 12 AI Technology Trends for 2024</h2>
-                            <p class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias veritatis....</p>
-                        </div>                       
-                    </div>
-                </a>
+                 </a>
+                 @endforeach
             </div> 
             <div class="blog-btn-slide">
                 <button class="blogs-prev"><i class="bi bi-arrow-left"></i></button>

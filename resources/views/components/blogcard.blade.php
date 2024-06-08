@@ -9,7 +9,7 @@ strip_tags($withouttags);
           <img data-src="{{asset('storage/upload/'.$image)}}" src="{{asset('storage/upload/'.$image)}}" class="img-fluid lazy" alt=""/> 
           <div class="card-body">
              <h2 class="title">{{$title}}</h2>
-             <p class="des">{!! $withouttags !!}</p>
+             <p class="des text-truncate">{!! $withouttags !!}</p>
           </div>
           <div class="card-footer d-flex">
              <div class="authorname">{{date('d M Y',strtotime($date))}}</div>
